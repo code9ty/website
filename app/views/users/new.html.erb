@@ -1,10 +1,12 @@
 <div class="columns">
-    <% if @user.errors.any? %>
-        <% @user.errors.full_messages do |message| %>
-            <label for="" class="error"> <%= message %> </label>
-            <% end %>
-    <% end %>
     <h1>Register</h1>
+    <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |msg| %>
+            <li>
+                <%= msg %>
+            </li>
+        <% end %>
+    <% end %>
     <%= form_for @user do |f| %>
         <%= f.label :first_name %>
         <%= f.text_field :first_name %>
