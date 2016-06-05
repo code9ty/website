@@ -22,6 +22,10 @@
         <%= f.text_field :mobile_number %>
         <%= f.label :email %>
         <%= f.text_field :email %>
+        <%= f.label :password %>
+        <%= f.password_field :password, placeholder: "At least 6 characters" %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, placeholder: "Confirm password" %>
         <%= f.button "Save details",type: "submit", class: "button expanded" %>
     <% end %>
 </div>

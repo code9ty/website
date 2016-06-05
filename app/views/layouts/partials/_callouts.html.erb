@@ -1,0 +1,5 @@
+<% flash.each do |flash_type, flash_message| %>
+  <div id="messages" class="callout small <%= flash_type %>" data-closable>
+    <%= flash_message %>
+  </div>
+<% end %>

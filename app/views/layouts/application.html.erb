@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "#Code90" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -12,11 +12,15 @@
   </head>
 
   <body>
+      <%= render 'layouts/partials/topbar' %>
+      <%= render "layouts/partials/callouts" %>
       <div class="row">
           <div class="column">
               <%= yield %>
           </div>
       </div>
+      </div> <!-- close off-canvas-->
+      </div> <!-- close off-canvas-->
 
   </body>
 </html>

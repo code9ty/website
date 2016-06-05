@@ -1,5 +1,11 @@
 <%content_for(:title, "#{@user.full_name} Feedback Page")%>
-<%= @user.full_name %>
+<div class="medium-3 columns hide-for-small-only">
+  <%= @user.full_name %>
+  <p><strong>Github:</strong> <%= @user.github %> </p>
+  <p><strong>University:</strong> <%= @user.university %></p>
+  <p><strong>Contribution: </strong></p>
+</div>
+<div class="medium-8 columns">
 <%= form_for([@user, Comment.new]) do |f| %>
   <%= f.label :learnt %>
   <%= f.text_area :learnt, rows: 5 %>
@@ -7,27 +13,28 @@
   <%= f.text_area :problem, rows:5 %>
   <%= f.label :rating, "Out of 10 how was the day?" %>
   <%#= f.text_field :rating , type: "range", min: 0, max: 10%>
-  <div class="small-9 columns">
-    <div class="slider" data-slider data-initial-start="0" data-step="1" data-end="10">
-      <span class="slider-handle"  data-slider-handle role="slider"  aria-controls="sliderOutput2"></span>
-      <span class="slider-fill" data-slider-fill></span>
+  <div class="row">
+    <div class="small-9 columns">
+      <div class="slider" data-slider data-initial-start="0" data-step="1" data-end="10">
+        <span class="slider-handle"  data-slider-handle role="slider"  aria-controls="sliderOutput2"></span>
+        <span class="slider-fill" data-slider-fill></span>
+      </div>
+    </div>
+    <div class="small-3 columns">
+      <%= f.text_field :rating, type: "number", id: "sliderOutput2" %>
     </div>
   </div>
-  <div class="small-3 columns">
-    <%= f.text_field :rating, type: "number", id: "sliderOutput2" %>
-  </div>
   <%= f.submit "Feedback", class: "button" %>
-  <% end %>
+<% end %>
 <h2>Feedback</h2>
 <% @comments.each do |comment| %>
   <div class="column">
-    <%= comment.created_at.to_formatted_s(:short) %>
-    <p> What I learnt</p>
-    <%= comment.learnt %>
-    <p> Problems I faced </p>
-    <%= comment.problem %>
-    <p> My day rating </p>
-    <%= comment.rating %>
+    <strong><%= comment.created_at.to_formatted_s(:short) %></strong>   Rated <%= comment.rating %>
+    <h3> What I learnt</h3>
+    <p><%= comment.learnt %></p>
+    <h3> Problems I faced </h3>
+    <p><%= comment.problem %></p>
     <hr>
   </div>
-  <% end %>
+<% end %>
+</div>
