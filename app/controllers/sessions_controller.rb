@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   def new
-    console
   end
   def create
     user = User.find_by(email: params[:session][:email].downcase)
@@ -11,7 +10,6 @@ class SessionsController < ApplicationController
     else
       flash.now[:alert] = "Invalid email and password combination"
       render 'new'
-      console
     end
   end
   def destroy
