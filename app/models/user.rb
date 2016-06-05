@@ -4,6 +4,8 @@ class User < ApplicationRecord
   validates :last_name, length: {minimum:3}, presence: true
   validates :github, uniqueness: true
 
+  has_many :comments
+
   def full_name
     "#{first_name} #{last_name}"
   end
