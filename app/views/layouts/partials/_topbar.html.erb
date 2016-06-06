@@ -16,7 +16,7 @@
             <ul class="vertical dropdown menu" data-dropdown-menu>
                 <li> <%= link_to "#Code90", root_url %></li>
                 <% if logged_in? %>
-                    <li> <%= link_to  "Logout",logout_path, method: "delete"%></li>
+                    <li> <% link_to  "Logout",logout_path, method: "delete"%></li>
                     <li> <%= link_to  "#{current_user.full_name}", user_path(current_user)%></li>
                 <% else %>
                     <li> <%= link_to  "Login", login_path%></li>
@@ -37,7 +37,7 @@
                 <ul class="menu">
                     <% if logged_in? %>
                         <li> <%= link_to  "#{current_user.full_name}", user_path(current_user)%></li>
-                        <li> <%= link_to  "Logout",logout_path, method: "delete"%></li>
+                        <li> <% link_to  "Logout",logout_path, method: "delete"%></li>
                     <% else %>
                         <li> <%= link_to  "Login", login_path%></li>
                     <% end %>

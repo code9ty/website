@@ -1,4 +1,5 @@
 <% content_for :title, "Login" %>
+<div class="medium-6 medium-centered">
 <h1> Login </h1>
 <%= form_for :session, url: login_path do |f| %>
     <%= f.label :email %>
@@ -7,3 +8,4 @@
     <%= f.password_field :password %>
     <%= f.submit "Log In", class: "button expanded small" %>
 <% end %>
+</div>
