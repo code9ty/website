@@ -6,7 +6,7 @@
   <p><strong>Contribution: </strong></p>
 </div>
 <div class="medium-8 columns">
-<%= form_for([@user, Comment.new]) do |f| %>
+<%= form_for([@user, @comment]) do |f| %>
   <%= f.label :learnt %>
   <%= f.text_area :learnt, rows: 3 %>
   <%= f.label :problem %>

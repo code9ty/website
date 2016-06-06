@@ -1,11 +1,13 @@
 class CommentsController < ApplicationController
   def create
     user = User.find(params[:user_id])
-    if user.comments.create(comment_params)
+    @comments = user.comments.new(comment_params)
+    if @comments.save
       redirect_to user
+      flash[:success] = "Thanks for your feedback"
     else
+      flash[:alert] = "There was a problem sending feedback"
       redirect_to user
-      binding.pry
     end
   end
 
