@@ -8,11 +8,12 @@
 <div class="medium-8 columns">
 <%= form_for([@user, Comment.new]) do |f| %>
   <%= f.label :learnt %>
-  <%= f.text_area :learnt, rows: 5 %>
+  <%= f.text_area :learnt, rows: 3 %>
   <%= f.label :problem %>
-  <%= f.text_area :problem, rows:5 %>
+  <%= f.text_area :problem, rows:3 %>
+  <%= f.label :possible_fix, "How i fixed a problem/ How i think it can be fixed" %>
+  <%= f.text_area :possible_fix, rows:3 %>
   <%= f.label :rating, "Out of 10 how was the day?" %>
-  <%#= f.text_field :rating , type: "range", min: 0, max: 10%>
   <div class="row">
     <div class="small-9 columns">
       <div class="slider" data-slider data-initial-start="0" data-step="1" data-end="10">
@@ -24,6 +25,8 @@
       <%= f.text_field :rating, type: "number", id: "sliderOutput2" %>
     </div>
   </div>
+  <%= f.label :suggestions, "What can we make better today?" %>
+  <%= f.text_area :suggestions, rows: 3 %>
   <%= f.submit "Feedback", class: "button" %>
 <% end %>
 <h2>Feedback</h2>
