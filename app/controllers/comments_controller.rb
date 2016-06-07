@@ -7,8 +7,12 @@ class CommentsController < ApplicationController
       flash[:success] = "Thanks for your feedback"
     else
       flash[:alert] = "There was a problem sending feedback"
-      redirect_to user
+      render 'new'
     end
+  end
+
+  def new
+    
   end
 
   private
