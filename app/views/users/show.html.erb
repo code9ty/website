@@ -6,8 +6,8 @@
   <p><strong>Contribution: </strong></p>
 </div>
 <div class="medium-8 columns">
-  <%= render 'comments_form' %>
-<h2>Feedback</h2>
+  <%= render 'comments/comments_form' %>
+<h2>Last 5 Feedbacks</h2>
 <% @comments.each do |comment| %>
   <div class="column">
     <strong><%= comment.created_at.to_formatted_s(:short) %></strong>   Rated <%= comment.rating %>
