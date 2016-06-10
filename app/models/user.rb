@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :mobile_number, length: {minimum: 10}
 
   has_many :comments
+  has_many :contributions
   has_secure_password
 
   def full_name

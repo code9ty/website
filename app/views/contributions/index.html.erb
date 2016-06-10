@@ -1,0 +1,8 @@
+<% @users.each do |user| %>
+    <%= user.full_name %> =>
+    <% user.contributions.each do |contribution| %>
+        <%= contribution.amount %>,
+        <% end %>
+        <br>
+    <% end %>
+    <%= console %>
