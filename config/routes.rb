@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :contributions
+  # resources :contributions
   root 'users#index'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
