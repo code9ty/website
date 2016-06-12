@@ -1,5 +1,22 @@
-<p class=""> Still working on this </p>
-<%= @all_comments.count %> feedbacks given  so far
-<% @all_comments.each do |comment| %>
-    <% comment.rating %>
+<table class="stack">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>What I Learnt</th>
+            <th>Problems Faced</th>
+            <th>Possible Fixes</th>
+            <th>Suggestions</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+<% @comments.each do |comment| %>
+    <tr>
+        <td> <%= comment.created_at.strftime("%d %b") %> </td>
+        <td> <%= comment.learnt %> </td>
+        <td> <%= comment.problem %> </td>
+        <td> <%= comment.possible_fix %> </td>
+        <td> <%= comment.suggestions %> </td>
+        <td> <%= comment.rating %> </td>
+    </tr>
 <% end %>
+</table>

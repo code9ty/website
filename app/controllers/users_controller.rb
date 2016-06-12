@@ -31,14 +31,6 @@ class UsersController < ApplicationController
                                 :year_of_study, :github, :mobile_number,
                                 :email, :password, :password_confirmation)
   end
-  # redirects to login page if user is not logged in
-  def logged_in_user
-    unless logged_in?
-      flash[:alert] = "You need to be logged in to view this page"
-      redirect_to login_url
-    end
-  end
-
   # return true if current user 
   def correct_user
     @user = User.find(params[:id])
