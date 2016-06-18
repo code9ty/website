@@ -5,13 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(first_name: "Mak",
-	last_name: "Atunga",
-	university: "Makatunga University",
-	year_of_study: "4",
-	github: "https://github.com/Makatunga",
-	mobile_number: "0712345678",
-	email: "makatunga@makatunga.com",
-	password: "cartoon",
-	password_confirmation: "cartoon",
-	treasurer: false)
+
+# User.create!(first_name: "Mak",
+# 	last_name: "Atunga",
+# 	university: "Makatunga University",
+# 	year_of_study: "4",
+# 	github: "https://github.com/Makatunga",
+# 	mobile_number: "0712345678",
+# 	email: "makatunga@makatunga.com",
+# 	password: "cartoon",
+# 	password_confirmation: "cartoon",
+# 	treasurer: false)
