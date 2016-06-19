@@ -20,6 +20,23 @@ class CommentsController < ApplicationController
     
   end
 
+  def edit
+    @user = current_user
+    @comments = @user.comments.first
+  end
+
+  def update
+    @user = current_user
+    @comments = @user.comments.first
+    if @comments.update_attributes(comment_params)
+      redirect_to current_user
+      flash[:success] = "You have successfully updated your feedback!"
+    else
+      flash.now[:alert] = "There was a problem sending feedback"
+      render 'edit'
+    end
+  end
+
   private
 
   def comment_params

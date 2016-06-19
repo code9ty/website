@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' =>'sessions#destroy'
   get 'feedback' => 'comments#index'
+  get 'edit_user_comment' => 'comments#edit'
   resources :users, except: [:new] do
     resources :comments, except: [:index]
   end
