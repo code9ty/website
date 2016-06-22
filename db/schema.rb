@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160610063949) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
     t.text     "learnt"
@@ -25,7 +22,7 @@ ActiveRecord::Schema.define(version: 20160610063949) do
     t.datetime "updated_at",   null: false
     t.text     "suggestions"
     t.text     "possible_fix"
-    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "contributions", force: :cascade do |t|
@@ -33,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160610063949) do
     t.decimal  "amount",     precision: 8, scale: 2
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
-    t.index ["user_id"], name: "index_contributions_on_user_id", using: :btree
+    t.index ["user_id"], name: "index_contributions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,6 +48,4 @@ ActiveRecord::Schema.define(version: 20160610063949) do
     t.boolean  "treasurer",       default: false
   end
 
-  add_foreign_key "comments", "users"
-  add_foreign_key "contributions", "users"
 end

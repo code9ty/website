@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'rails', '~>5.0.0.rc1'
-gem 'pg', '~> 0.18'
+gem 'sqlite3'
 gem 'puma'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -33,6 +33,10 @@ end
 
 group :test do
   gem 'database_cleaner'
+end
+
+group :production do
+  gem 'pg', '~> 0.18'
 end
 
 group :development do
