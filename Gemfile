@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 gem 'rails', '~>5.0.0.rc1'
-gem 'sqlite3'
 gem 'puma'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -30,6 +29,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'warden', '~> 1.2', '>= 1.2.6'
   gem 'guard-minitest'
+  gem 'sqlite3'
 end
 
 group :test do
