@@ -21,14 +21,15 @@ gem "binding_of_caller"
 
 
 group :development, :test do
-  gem 'rspec', '~> 3.5.0.beta3'
-  gem 'rspec-core', '~> 3.5.0.beta3'
-  gem 'rspec-rails', '~> 3.5.0.beta3'
+#  gem 'rspec', '~> 3.5.0.beta3'
+#  gem 'rspec-core', '~> 3.5.0.beta3'
+#  gem 'rspec-rails', '~> 3.5.0.beta3'
   gem 'factory_girl_rails'
   gem 'rails-controller-testing'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'warden', '~> 1.2', '>= 1.2.6'
+  gem 'guard-minitest'
 end
 
 group :test do
