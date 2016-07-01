@@ -1,7 +1,7 @@
 <%content_for(:title, "#{@user.full_name} Feedback Page")%>
 <div class="medium-3 columns hide-for-small-only">
   <%= @user.full_name %>
-  <p><strong>Github:</strong> <%= @user.github %> </p>
+  <p><strong>Github:</strong> <%= link_to @user.github  %> </p>
   <p><strong>University:</strong> <%= @user.university %></p>
   <p><strong>Contribution: </strong></p>
 </div>
