@@ -23,6 +23,10 @@ class CommentsController < ApplicationController
   def edit
     @user = current_user
     @comments = @user.comments.first
+    if @comments.nil?
+      flash[:alert] = "Please provide feedback!"
+       redirect_to @user
+    end
   end
 
   def update
