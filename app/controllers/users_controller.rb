@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @comments = @user.comments.limit(5)
     @comment = Comment.new
+    @projects = @user.projects
   end
 
   private

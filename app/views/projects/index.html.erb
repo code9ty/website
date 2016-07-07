@@ -1,0 +1,19 @@
+<table>
+    <thead>
+        <tr>
+            <th>Project</th>
+            <th>Link</th>
+            <th>Due Date</th>
+            <th>Assigned?</th>
+        </tr>
+    </thead>
+    <% @projects.each do |project| %>
+        <tr>
+            <td><%= project.title  %></td>
+            <td><%= link_to "#{project.link}" %></td>
+            <td> <%= time_ago_in_words(project.due_date) %></td>
+            <td> Yes/No </td>
+        </tr>
+
+    <% end %>
+</table>
