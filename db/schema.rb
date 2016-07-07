@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706184349) do
+ActiveRecord::Schema.define(version: 20160707094621) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160706184349) do
     t.string   "password_digest"
     t.string   "remember_digest"
     t.boolean  "treasurer",       default: false
+    t.boolean  "admin"
   end
 
 end

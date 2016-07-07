@@ -1,0 +1,31 @@
+<div class="medium-10 medium-centered">
+
+  <div class="medium-12 columns">
+  <% if @project.errors.any? %>
+    <% @project.errors.full_messages.each do |msg| %>
+      <li class="no-bullet"><%= msg %></li>
+      <% end %>
+    <% end %>
+    </div>
+<%= form_for @project do |f| %>
+  <div class="medium-12 columns">
+  <%= f.text_field :title, placeholder: "Project Title " %>
+    </div>
+  <div class="medium-12 columns">
+  <%= f.text_field :link, placeholder: "e.g http://github.com/sigu/project1"  %>
+    </div>
+  <div class="medium-12 columns">
+    <div class="callout medium-5 columns">
+      <%= f.label :due_date, "Due Date" %>
+      <%= f.date_select :due_date %>
+    </div>
+    <div class="callout medium-5 columns">
+      <%= f.label :start_date, "Start Date" %>
+      <%= f.date_select :start_date %>
+    </div>
+  </div>
+  <div class="medium-12 columns">
+    <%= f.submit "Save Project", class: "button" %>
+  </div>
+<% end %>
+</div>

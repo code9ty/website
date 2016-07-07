@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   delete 'logout' =>'sessions#destroy'
   get 'feedback' => 'comments#index'
   get 'edit_user_comment' => 'comments#edit'
-  get 'projects'=> 'projects#index'
+  resources :projects
   resources :users, except: [:new] do
     resources :comments, except: [:index]
   end
