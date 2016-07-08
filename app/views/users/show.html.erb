@@ -1,7 +1,6 @@
 <%content_for(:title, "#{@user.full_name} Feedback Page")%>
 <div class="medium-3 columns hide-for-small-only">
-    <%= @user.full_name %>
-    <p><strong>Github:</strong> <%= link_to @user.github, @user.github, target: "_"  %> </p>
+    <%# <p><strong>Github:</strong> <%= link_to @user.github, @user.github, target: "_"  %1> </p> %>
     <%# <p><strong>University:</strong> <%= @user.university %1></p> %>
     <p><strong>Current Projects: </strong></p>
     <% if @projects.any? %>
@@ -18,15 +17,4 @@
 </div>
 <div class="medium-8 columns">
     <%= render 'comments/comments_form' %>
-    <h2>Last 5 Feedbacks</h2>
-    <% @comments.each do |comment| %>
-        <div class="column">
-            <strong><%= comment.created_at.to_formatted_s(:short) %></strong>   Rated <%= comment.rating %>
-        <h3> What I learnt</h3>
-        <p><%= comment.learnt %></p>
-        <h3> Problems I faced </h3>
-        <p><%= comment.problem %></p>
-        <hr>
-        </div>
-    <% end %>
 </div>

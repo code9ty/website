@@ -8,8 +8,33 @@ user = User.create!(
  email: "makatunga@makatunga.com",
  password: "cartoon",
  password_confirmation: "cartoon",
- treasurer: false
+ treasurer: false,
+ admin: true
 )
+3.times do
+   first_name= Faker::Name.first_name
+   last_name= Faker::Name.last_name
+   university= Faker::Company.name
+   year_of_study= rand(1...4)
+   github= Faker::Internet.url
+   mobile_number= Faker::PhoneNumber.cell_phone
+   email= Faker::Internet.email
+   password= "cartoon"
+   treasurer= false
+   admin = false
+   User.create!(first_name: first_name,
+               last_name: last_name,
+               university: university,
+               year_of_study: year_of_study,
+               github: github,
+               mobile_number: mobile_number,
+               email: email,
+               password: password,
+               password_confirmation: password,
+               admin: admin,
+               treasurer: treasurer
+               )
+end
 project = Project.create!(
   title: "Test Project",
   link: Faker::Internet.url,
@@ -26,6 +51,9 @@ user.projects = [project]
 end
 
 2.times do
-  project = Project.find(rand(0..20))
+  project = Project.find(rand(1..20))
   user.projects << project
+  2.upto 4 do |n|
+    User.find(n).projects << Project.find(rand(1...20))
+  end
 end

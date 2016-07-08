@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  before_action :is_admin, except: [:index]
   def index
     @projects = Project.all
   end
@@ -25,5 +26,9 @@ class ProjectsController < ApplicationController
       :due_date,
       :start_date
     )
+  end
+
+  def is_admin
+    redirect_to root_url unless current_user.admin?
   end
 end
