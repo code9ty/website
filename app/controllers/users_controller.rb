@@ -23,6 +23,7 @@ class UsersController < ApplicationController
     @comments = @user.comments.limit(5)
     @comment = Comment.new
     @projects = @user.projects
+    @assignments = Assignment.all
   end
 
   private
