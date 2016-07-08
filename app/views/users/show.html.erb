@@ -2,32 +2,38 @@
 <div class="medium-3 columns hide-for-small-only">
     <%# <p><strong>Github:</strong> <%= link_to @user.github, @user.github, target: "_"  %1> </p> %>
     <%# <p><strong>University:</strong> <%= @user.university %1></p> %>
-    <h4><strong>Current Projects: </strong></h4>
-    <% if @projects.any? %>
-        <% @projects.each do |project| %>
-            <p>
-            <%= project.title %> <br/>
-            <small> <%= distance_of_time_in_words(Time.zone.now, project.due_date) %> remaining (<%= percentage_remaining(project) %> %)</small>
-            <div class="progress <%= coloring(project) %> " role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
-                <div class="progress-meter" style="width: <%= percentage_remaining(project) %>%"></div>
-            </div>
-            </p>
+    <div class="callout">
+        <h4><strong>Current Projects: </strong></h4>
+        <% if @projects.any? %>
+            <% @projects.each do |project| %>
+                <p>
+                <%= project.title %> <br/>
+                <small> <%= distance_of_time_in_words(Time.zone.now, project.due_date) %> remaining (<%= percentage_remaining(project) %> %)</small>
+                <div class="progress <%= coloring(project) %> " role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
+                    <div class="progress-meter" style="width: <%= percentage_remaining(project) %>%"></div>
+                </div>
+                </p>
+            <% end %>
         <% end %>
-    <% end %>
-    <h4><strong>Assignments</strong></h4>
-    <% if @assignments.any? %>
-        <% @assignments.each do |assignment| %>
-            <p>
-            <%= assignment.title %> <br/>
-            <small> <%= distance_of_time_in_words(Time.zone.now, assignment.due_date) %> remaining (<%= percentage_remaining(assignment) %> %)</small>
-            <div class="progress <%= coloring(assignment) %> " role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
-                <div class="progress-meter" style="width: <%= percentage_remaining(assignment) %>%"></div>
-            </div>
-            </p>
-            <p> <%= link_to assignment.link, assignment.link %> </p>
-            <p> <%= assignment.description %> </p>
+    </div>
+    <div class="callout">
+
+        <h4><strong>Assignments</strong></h4>
+        <% if @assignments.any? %>
+            <% @assignments.each do |assignment| %>
+                <p>
+                <%= assignment.title %> <br/>
+                <small> <%= distance_of_time_in_words(Time.zone.now, assignment.due_date) %> remaining (<%= percentage_remaining(assignment) %> %)</small>
+                <div class="progress <%= coloring(assignment) %> " role="progressbar" tabindex="0" aria-valuenow="50" aria-valuemin="0" aria-valuetext="50 percent" aria-valuemax="100">
+                    <div class="progress-meter" style="width: <%= percentage_remaining(assignment) %>%"></div>
+                </div>
+                </p>
+                <p> <%= link_to assignment.link, assignment.link %> </p>
+                <p> <%= assignment.description %> </p>
+                <hr>
+            <% end %>
         <% end %>
-    <% end %>
+    </div>
 </div>
 <div class="medium-8 columns">
     <%= render 'comments/comments_form' %>
