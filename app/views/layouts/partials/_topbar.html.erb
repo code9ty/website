@@ -27,7 +27,7 @@
         <div class="top-bar" id="widemenu">
             <div class="top-bar-left">
                 <ul class="menu">
-                    <li> <%= link_to "Home", root_url %></li>
+                    <li> <%= link_to "Home", root_url(id: current_user.id) %></li>
                 </ul>
                 <ul class="dropdown menu" data-dropdown-menu>
                     <!-- <li class="menu-text"><a href="/">Home</a></li> -->

@@ -26,6 +26,13 @@ class UsersController < ApplicationController
     @assignments = Assignment.all
   end
 
+  def dashboard
+    @users = User.all
+    @feedbacks = Comment.all
+    @user = User.find(params[:user_id]) if params[:user_id]
+    @feedback = @user.comments if @user
+  end
+
   private
 
   def user_params
@@ -37,7 +44,9 @@ class UsersController < ApplicationController
   def correct_user
     if current_user
       @user = User.find(params[:id]) if params[:id]
-      redirect_to user_path(current_user) unless current_user?@user
+      unless current_user?(@user) || current_user.admin?
+        redirect_to user_path(current_user) 
+      end
     else
       redirect_to login_path
     end

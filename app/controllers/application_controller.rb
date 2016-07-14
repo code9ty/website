@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def is_admin
+  def admin?
     redirect_to root_url unless current_user.admin?
   end
 

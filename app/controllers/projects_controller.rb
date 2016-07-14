@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :is_admin, except: [:index]
+  before_action :admin?, except: [:index]
   def index
     @projects = Project.all
   end
