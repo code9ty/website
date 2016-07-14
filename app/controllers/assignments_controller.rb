@@ -1,5 +1,5 @@
 class AssignmentsController < ApplicationController
-  before_action :is_admin
+  before_action :admin?
   def new
     @assignment = Assignment.new
   end

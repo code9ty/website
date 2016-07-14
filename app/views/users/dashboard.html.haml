@@ -1,0 +1,58 @@
+.row
+  .medium-4.columns
+    - @users.each do |user|
+      %li.no-bullet
+        = link_to user.full_name, {user_id: user.id}
+        %small
+          .float-right
+            = link_to "Show", user_path(user)
+            = link_to "Edit", edit_user_path(user)
+            = link_to "Destroy", user_path(user), method: 'delete'
+  .medium-8.columns
+    %ul.tabs#feedback-tabs{'data-tabs'=> ''}
+      %li.tabs-title
+        %a{'href' => '#fb-learnt'}
+          Learnt
+      %li.tabs-title
+        %a{'href' => '#fb-suggestions'}
+          Suggestions
+      %li.tabs-title
+        %a{'href' => '#fb-problems'}
+          Problems
+      %li.tabs-title
+        %a{'href' => '#fb-fix'}
+          Possible Fix
+    - if @user
+      .tabs-content{'data-tabs-content' => 'feedback-tabs'}
+        .tabs-panel#fb-learnt
+          - @feedback.each do |feedback|
+            .callout
+              = feedback.learnt
+              %br
+              %small
+                = feedback.created_at
+                = (time_ago_in_words(feedback.created_at))
+        .tabs-panel#fb-suggestions
+          - @feedback.each do |feedback|
+            .callout
+              = feedback.suggestions
+              %br
+              %small
+                = feedback.created_at
+                = (time_ago_in_words(feedback.created_at))
+        .tabs-panel#fb-problems
+          - @feedback.each do |feedback|
+            .callout
+              = feedback.problem
+              %br
+              %small
+                = feedback.created_at
+                = (time_ago_in_words(feedback.created_at))
+        .tabs-panel#fb-fix
+          - @feedback.each do |feedback|
+            .callout
+              = feedback.possible_fix
+              %br
+              %small
+                = feedback.created_at
+                = (time_ago_in_words(feedback.created_at))

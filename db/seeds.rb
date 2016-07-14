@@ -42,18 +42,35 @@ project = Project.create!(
   start_date: 10.days.ago
 )
 user.projects = [project]
-20.times do
+5.times do
   title = Faker::Commerce.product_name
   link = Faker::Internet.url
   due_date = Faker::Date.between(Date.today, 28.days.from_now)
   start_date = Faker::Date.between(4.days.ago, Time.zone.now)
   Project.create!(title: title, link: link, due_date: due_date, start_date: start_date)
 end
+# 5 times user ids
+5.times do |n|
+  user_id = n
+  # for each user create 20 comments
+  20.times do
+    learnt = Faker::Lorem.paragraph
+    problem = Faker::Lorem.paragraph
+    suggestions = Faker::Lorem.paragraph
+    possible_fix = Faker::Lorem.paragraph
+    rating = rand(0...10)
+    created_at = Faker::Date.between(60.days.ago, Time.zone.now)
+    Comment.create!(user_id: user_id, learnt: learnt, problem: problem,
+                    suggestions: suggestions, rating: rating, possible_fix: possible_fix,
+                    created_at: created_at
+                   )
+  end
+end
 
 2.times do
-  project = Project.find(rand(1..20))
+  project = Project.find(rand(1..5))
   user.projects << project
   2.upto 4 do |n|
-    User.find(n).projects << Project.find(rand(1...20))
+    User.find(n).projects << Project.find(rand(1...5))
   end
 end

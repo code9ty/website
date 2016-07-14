@@ -4,7 +4,7 @@
             <th>Project</th>
             <th>Description</th>
             <th>Due Date</th>
-            <th>Assigned?</th>
+            <th>Status</th>
         </tr>
     </thead>
     <% @projects.each do |project| %>
@@ -12,8 +12,11 @@
             <td><%= project.title  %></td>
             <td><%= link_to "#{project.link}", project.link, target: "_" %></td>
             <td> <%= time_ago_in_words(project.due_date) %></td>
-            <td> Yes/No </td>
+            <% if current_user.projects.include? project %>
+                <td>Assigned</td>
+            <% else %>
+                <td><button class="button small" id="request-button">Request</button></td>
+            <% end %>
         </tr>
-
     <% end %>
 </table>
