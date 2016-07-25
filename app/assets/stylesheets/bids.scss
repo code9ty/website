@@ -1,0 +1,17 @@
+// Place all the styles related to the bids controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#assign-link {
+  a {
+    padding: 5px;
+    background-color:#3ADB76;
+    color: white;
+  }
+}
+#reject-link {
+  a {
+    padding: 5px;
+    background-color:#EC5840;
+    color: white;
+  }
+}

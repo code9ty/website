@@ -11,7 +11,8 @@ class User < ApplicationRecord
 
   has_many :comments
   has_many :contributions
-  has_and_belongs_to_many :projects
+  has_many :bids
+  has_many :projects, through: :bids
   has_secure_password
 
   def full_name

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :project do
-    link "MyString"
+    link Faker::Internet.url
     title "MyString"
   end
 end

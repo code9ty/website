@@ -1,0 +1,37 @@
+%h2 Available projects
+%table
+  %thead
+    %tr
+      %th Project
+      %th Description
+      %th Due Date
+      %th Status
+
+  %tbody
+    - @projects.each do |project|
+      - unless current_user.projects.include? project
+        %tr
+          %td #{project.title}
+          %td #{link_to project.link, project.link, target: "_"}
+          %td #{time_ago_in_words(project.due_date)}
+          %td
+            -# = link_to "Request", bids_path(user_id: current_user.id, project_id: project.id), method: :post
+            = form_for project.bids.build do |f|
+              = f.hidden_field :project_id
+              = f.hidden_field :user_id, value: current_user.id
+              = f.submit 'Request', class: 'button small'
+
+%h2 Assigned Projects
+%table
+  %thead
+    %tr
+      %th Project
+      %th Due Date
+      %th Status
+
+  %tbody
+    - @bids.each do |bid|
+      %tr
+        %td #{bid.project.title}
+        %td #{time_ago_in_words(bid.project.due_date)}
+        %td #{bid.status}

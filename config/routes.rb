@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'feedback' => 'comments#index'
   get 'dashboard' => 'users#dashboard'
   get 'edit_user_comment' => 'comments#edit'
+  get 'assign' => 'bids#assign'
+  resources :bids
   resources :projects
   resources :assignments, only: [:index, :new, :create]
   resources :users, except: [:new] do

@@ -1,0 +1,37 @@
+%h2 Requests
+%table
+  %thead
+    %tr
+      %th User
+      %th Project Requested
+      %th Action
+  %tbody
+    - @requested.each do |request|
+      %tr
+        %td #{request.user.full_name}
+        %td #{request.project.title}
+        %td
+          %span#assign-link
+            %a{'data-open' => 'assign-modal'} Assign
+          %span#reject-link
+            = link_to "Reject"
+
+      .reveal#assign-modal{ 'data-reveal' => true }
+        %h3 Number of days
+        = form_tag('/assign', method: :get) do
+          = number_field_tag 'days', 14
+          = hidden_field_tag 'bid', request.id
+          = submit_tag 'Assign'
+
+%h2 Assigned Projects
+%table
+  %thead
+    %tr
+      %th User
+      %th Project Assigned
+      %th Action
+  %tbody
+    - @assigned.each do |assigned_project|
+      %tr
+        %td #{assigned_project.user.full_name}
+        %td #{assigned_project.project.title}

@@ -1,5 +1,8 @@
 <% flash.each do |flash_type, flash_message| %>
-  <div id="messages" class="callout small <%= flash_type %>" data-closable>
+  <div id="messages" class="callout  <%= flash_type %>" data-closable>
     <%= flash_message %>
+    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
 <% end %>

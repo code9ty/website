@@ -50,7 +50,7 @@ user.projects = [project]
   Project.create!(title: title, link: link, due_date: due_date, start_date: start_date)
 end
 # 5 times user ids
-5.times do |n|
+1.upto(4) do |n|
   user_id = n
   # for each user create 20 comments
   20.times do
@@ -67,10 +67,24 @@ end
   end
 end
 
+# assign users 2 projects each
 2.times do
-  project = Project.find(rand(1..5))
-  user.projects << project
+  # project = Project.find(rand(1..5))
+  # user.projects << project
   2.upto 4 do |n|
-    User.find(n).projects << Project.find(rand(1...5))
+    # get a random user from the database
+    random_user = User.find(n)
+    random_project = Project.find(rand(1...5))
+    random_user.projects << random_project unless random_user.projects.include? random_project
   end
+end
+
+#seed assignments for the users
+3.times do
+  title = Faker::Commerce.product_name
+  description = Faker::Lorem.sentence
+  link = Faker::Internet.url
+  due_date = Faker::Date.between(Date.today, 28.days.from_now)
+  start_date = Faker::Date.between(4.days.ago, Time.zone.now)
+  Assignment.create!(title: title, description: description, link: link, due_date: due_date, start_date: start_date)
 end

@@ -1,7 +1,9 @@
 class ProjectsController < ApplicationController
   before_action :admin?, except: [:index]
+  before_action :logged_in_user
   def index
     @projects = Project.all
+    @bids = current_user.bids
   end
   def new
     @project = Project.new

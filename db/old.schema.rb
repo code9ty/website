@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160723140118) do
+ActiveRecord::Schema.define(version: 20160723095852) do
 
   create_table "assignments", force: :cascade do |t|
     t.string   "title"
@@ -27,11 +27,10 @@ ActiveRecord::Schema.define(version: 20160723140118) do
     t.integer  "user_id"
     t.integer  "project_id"
     t.datetime "due_date"
-    t.integer  "status",     default: 0
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["project_id"], name: "index_bids_on_project_id"
-    t.index ["user_id", "project_id"], name: "index_bids_on_user_id_and_project_id", unique: true
     t.index ["user_id"], name: "index_bids_on_user_id"
   end
 
