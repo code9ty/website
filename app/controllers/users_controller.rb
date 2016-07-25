@@ -20,9 +20,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @comments = @user.comments.limit(5)
     @comment = Comment.new
-    @projects = @user.projects
+    @bids = @user.bids
     @assignments = Assignment.all
   end
 

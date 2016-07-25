@@ -1,5 +1,5 @@
 class BidsController < ApplicationController
-  before_action :admin?, except: [:create]
+  before_action :admin?, except: [:create, :destroy]
   def create
     @bid = Bid.new(bid_params)
     begin
@@ -24,12 +24,17 @@ class BidsController < ApplicationController
   def assign
    bid = Bid.find(params[:bid]) 
    due_date = Time.zone.now + params[:days].to_i.days
-   if bid.update_attributes(status: "assigned", due_date: due_date)
+   if bid.update_attributes(status: "assigned", due_date: due_date, start_date: Time.zone.now)
      flash[:success] = "#{bid.user.full_name} has been successfully assigned this project"
    else
      flash[:alert] = "There was a problem assigning the project"
    end
    redirect_to bids_path
+  end
+  def destroy
+    bid = Bid.find(params[:id])
+    bid.destroy
+    redirect_to projects_path
   end
 
 
