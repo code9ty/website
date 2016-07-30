@@ -1,24 +1,22 @@
-# README
+#README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Feedback application for Lakehub Interns
+  This application uses ruby on rails for backend developement
 
-Things you may want to cover:
+##Get started
 
-* Ruby version
+The project has been generated using rails version 5.0 with ruby version 2.3.0. It uses css(scss) for stylesheet.
 
-* System dependencies
+##Contributing Guidelines
 
-* Configuration
+You can fork the repo and make pull requests if you wish to add changes to the application or remove bugs. to do this follow the following steps
+ * Fork it
+ * Create feature branch
+ * Commit changes
+ * Push to branch
+ * Create a new Pull request
 
-* Database creation
+ To view the app click this [here](https://code90.herokuapp.com)
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
