@@ -9,15 +9,7 @@
   %tbody
     - @projects.each do |project|
       - unless current_user.projects.include? project
-        %tr
-          %td #{project.title}
-          %td #{link_to project.link, project.link, target: "_"}
-          %td
-            -# = link_to "Request", bids_path(user_id: current_user.id, project_id: project.id), method: :post
-            = form_for project.bids.build do |f|
-              = f.hidden_field :project_id
-              = f.hidden_field :user_id, value: current_user.id
-              = f.submit 'Request', class: 'button small'
+        = render "project", project: project
 
 %h2 Assigned Projects
 %table
@@ -28,16 +20,6 @@
       %th Status
       %th Action
 
-  %tbody
+  %tbody.bids
     - @bids.each do |bid|
-      %tr
-        %td #{bid.project.title}
-        - if bid.due_date.nil?
-          %td _
-        - else
-          %td
-            = bid.due_date.strftime('%A, %b-%d')
-            ="(#{ time_ago_in_words(bid.due_date)})"
-        %td #{bid.status}
-        - if bid.status == "requested"
-          %td #{ link_to "Cancel Request", bid, method: :delete }
+      = render "bid", bid: bid

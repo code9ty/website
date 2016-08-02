@@ -1,0 +1,8 @@
+%tr{ id: project.id }
+  %td #{project.title}
+  %td #{link_to project.link, project.link, target: "_"}
+  %td
+    = form_for project.bids.build, remote: true do |f|
+      = f.hidden_field :project_id
+      = f.hidden_field :user_id, value: current_user.id
+      = f.submit 'Request', class: 'button small'

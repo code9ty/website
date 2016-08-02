@@ -4,8 +4,13 @@ class BidsController < ApplicationController
     @bid = Bid.new(bid_params)
     begin
     if @bid.save
-      redirect_to projects_path
-      flash[:success] = "You have requested for this project. A confirmation Email will be sent once approved"
+      respond_to do |format|
+        format.js {}
+        format.html{
+          redirect_to projects_path
+          flash[:success] = "You have requested for this project. A confirmation Email will be sent once approved"
+        }
+      end
     else
       redirect_to projects_path
       flash[:alert] = "Something went wrong try again"

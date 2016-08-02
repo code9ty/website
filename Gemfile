@@ -51,7 +51,7 @@ group :development do
   gem 'guard-rails'
   gem 'guard-livereload', require: false
   gem 'guard-rspec', '~>4.6.5'
-  gem 'quiet_assets'
+  # gem 'quiet_assets'
   gem 'rails_layout'
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
