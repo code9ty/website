@@ -1,25 +1,27 @@
-%h2 Available projects
-%table
-  %thead
-    %tr
-      %th Project
-      %th Description
-      %th Status
+.medium-6.columns
+  %h2 Available projects
+  %table
+    %thead
+      %tr
+        %th Project
+        %th Description
+        %th Status
 
-  %tbody
-    - @projects.each do |project|
-      - unless current_user.projects.include? project
-        = render "project", project: project
+    %tbody#projects
+      - @projects.each do |project|
+        - unless current_user.projects.include? project
+          = render "project", project: project
 
-%h2 Assigned Projects
-%table
-  %thead
-    %tr
-      %th Project
-      %th Due Date
-      %th Status
-      %th Action
+.medium-6.columns
+  %h2 Assigned Projects
+  %table
+    %thead
+      %tr
+        %th Project
+        %th Due Date
+        %th Status
+        %th Action
 
-  %tbody.bids
-    - @bids.each do |bid|
-      = render "bid", bid: bid
+    %tbody#bids
+      - @bids.each do |bid|
+        = render "bid", bid: bid

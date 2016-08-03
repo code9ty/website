@@ -37,9 +37,14 @@ class BidsController < ApplicationController
    redirect_to bids_path
   end
   def destroy
-    bid = Bid.find(params[:id])
-    bid.destroy
-    redirect_to projects_path
+    @bid = Bid.find(params[:id])
+    @bid.destroy
+    respond_to do |format|
+      format.js
+      format.html {
+        redirect_to projects_path
+      }
+    end
   end
 
 

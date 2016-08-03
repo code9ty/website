@@ -1,4 +1,4 @@
-%tr
+%tr{ id: ["bid", bid.id] }
   %td #{bid.project.title}
   - if bid.due_date.nil?
     %td _
@@ -8,4 +8,4 @@
       ="(#{ time_ago_in_words(bid.due_date)})"
   %td #{bid.status}
   - if bid.status == "requested"
-    %td #{ link_to "Cancel Request", bid, method: :delete }
+    %td #{ link_to "Cancel Request", bid, method: :delete, remote: true }
