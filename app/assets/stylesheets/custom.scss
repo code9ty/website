@@ -1,9 +1,12 @@
 body {
-    color: #444;
+    color: #34495E !important;
 }
 .off-canvas {
     height: 100%;
     padding-top: 50px;
+}
+.off-canvas-wrapper-inner, .off-canvas-wrapper{
+  height: 100%;
 }
 .close-button {
     color: white;

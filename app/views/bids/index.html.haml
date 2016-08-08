@@ -19,9 +19,18 @@
       .reveal#assign-modal{ 'data-reveal' => true }
         %h3 Number of days
         = form_tag('/assign', method: :get) do
-          = number_field_tag 'days', 14
+          .medium-12.columns
+            = label_tag 'days', 'How many days from today?'
+            = number_field_tag 'days', 14
+          .medium-6.columns
+            = label_tag 'start_date', 'Start Date'
+            = date_field_tag 'start_date', Time.zone.now
+          .medium-6.columns
+            = label_tag 'due_date', 'Due Date'
+            = date_field_tag 'due_date'
           = hidden_field_tag 'bid', request.id
-          = submit_tag 'Assign'
+          .medium-12.columns
+            = submit_tag 'Assign', class: 'button expanded'
 
 %h2 Assigned Projects
 %table

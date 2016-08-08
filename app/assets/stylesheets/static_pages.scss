@@ -1,0 +1,65 @@
+// Place all the styles related to the static_pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'compass';
+#intro{
+  background-image: url('intro.jpeg');
+  height: 100%;
+  @include background-size(cover);
+}
+
+#apply {
+  text-align: center;
+  background: #34495E;
+  color: white;
+  padding-top: 32.5px;
+  padding-bottom: 50px;
+  button {
+     box-shadow: 0px -3px 3px rgba(0,0,0,0.35) inset;
+     border-radius: 3px;
+     margin-bottom: 0px;
+     padding: 0.85em 4em;
+  }
+
+}
+
+#cohort {
+  .columns{
+    margin-bottom: 30px;
+  }
+  h2 {
+    text-align: center;
+  }
+  padding-top: 20px;
+   background: #EBEEEE none repeat scroll 0% 0%;
+   .item-wrap {
+     position: relative;
+     img {
+       margin-bottom: 0;
+     }
+
+   }
+   .overlay{
+     opacity: 0;
+     background: url('overlay-bg.png');
+     color: white;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     position: absolute;
+     @include transition-property(opacity);
+     @include transition-duration(0.9s);
+     &:hover {
+       opacity: 1;
+
+     }
+   }
+ }
+ footer {
+   color: #333;
+   background-color: #0f0f0f;
+   padding-top: 48px;
+   padding-bottom: 18px;
+   text-align: center;
+
+ }

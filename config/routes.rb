@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'home' => 'static_pages#home'
+
   root 'users#show'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'

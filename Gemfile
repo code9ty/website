@@ -18,6 +18,7 @@ gem 'font-awesome-sass', '~> 4.6.2'
 gem 'bcrypt', '~> 3.1.7'
 gem "binding_of_caller"
 gem 'haml'
+gem 'compass-rails'
 
 group :development, :test do
  gem 'rspec', '~> 3.5.0.beta3'
@@ -51,10 +52,6 @@ group :development do
   gem 'guard-rails'
   gem 'guard-livereload', require: false
   gem 'guard-rspec', '~>4.6.5'
-  # gem 'quiet_assets'
+  gem 'quiet_assets'
   gem 'rails_layout'
-  gem 'rb-fchange', :require=>false
-  gem 'rb-fsevent', :require=>false
-  gem 'rb-inotify', :require=>false
-  gem 'spring-commands-rspec'
 end
