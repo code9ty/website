@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root 'users#show'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
@@ -9,10 +10,15 @@ Rails.application.routes.draw do
   get 'dashboard' => 'users#dashboard'
   get 'edit_user_comment' => 'comments#edit'
   get 'assign' => 'bids#assign'
+  get 'apply' =>  'applicants#new'
+  post 'apply' =>  'applicants#create'
+  get 'applicants' => 'applicants#index'
+  get 'accept' => 'applicants#accept'
   resources :bids
   resources :projects
   resources :assignments, only: [:index, :new, :create]
   resources :users, except: [:new] do
     resources :comments, except: [:index]
+    resources :applicants
   end
 end
