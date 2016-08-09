@@ -18,11 +18,13 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.find(params[:id])
   end
   def index
-    @applicants = Applicant.all
+    @applicants = Applicant.where(status: "apply")
   end
   def accept
     @accepts = Applicant.find(params[:geek])
+    @accepts.update_attributes(status: "accept")
     flash.now[:success] = "Good choice, an email was sent to the applicant"
+    @applicants = Applicant.where(status: "accept")
   end
   private
   def apply_params

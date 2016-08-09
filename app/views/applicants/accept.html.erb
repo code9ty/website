@@ -1,0 +1,15 @@
+<h1> Guys Accepted for interview</h1>
+There are <%= pluralize(@applicants.count, "interview") %> so far
+<table>
+    <tr>
+
+        <th>Name</th>
+        <th>Github</th>
+    </tr>
+    <% @applicants.each do |geek| %>
+        <tr>
+            <td> <%= geek.name %></td>
+            <td><%= geek.github %></td>
+        </tr>
+    <% end %>
+</table>

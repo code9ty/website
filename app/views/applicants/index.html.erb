@@ -10,7 +10,7 @@ There are <%= pluralize(@applicants.count, "applicant") %> so far
         <tr>
             <td><%= geek.name %></td>
             <td><%= geek.github %></td>
-            <td><%= link_to "YES",accept_path(geek: geek.id) %></td>
+            <td><%= link_to "YES",accept_path(geek: geek.id, status: "accept") %></td>
         </tr>
     <% end %>
 </table>
