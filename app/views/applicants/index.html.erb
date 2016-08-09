@@ -1,0 +1,17 @@
+<h1>Applicants for Code90</h1>
+There are <%= pluralize(@applicants.count, "applicant") %> so far
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Github</th>
+        <th>Accept?</th>
+    </tr>
+    <% @applicants.each do  |geek| %>
+        <tr>
+            <td><%= geek.name %></td>
+            <td><%= geek.github %></td>
+            <td><%= link_to "YES",accept_path(geek: geek.id) %></td>
+        </tr>
+    <% end %>
+</table>
+

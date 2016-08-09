@@ -1,0 +1,21 @@
+<h1>Apply here!!!!</h1>
+
+<%= form_for(:applicant, url: apply_path) do |s| %>
+    <% if @applicant.errors.any? %>
+        <% @applicant.errors.full_messages.each do |msg| %>
+            <ul>
+                <li>
+                    <%= msg %>
+                </li>
+            </ul>
+        <% end %>
+    <% end %>
+    <%= s.label :name %>
+    <%= s.text_field :name, placeholder: "Name" %>
+    <%= s.label :email %>
+    <%= s.text_field :email, placeholder: "Email" %>
+    <%= s.label :github %>
+    (Do not have an account? join github now!!)<%= link_to "here", 'https://github.com' %>
+<%= s.text_field :github, placeholder: "https://github.com/bunch" %>
+<%= s.submit "Apply" %>
+<% end %>
