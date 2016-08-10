@@ -1,7 +1,7 @@
 <h1>Code</h1>
 
 <p>
- Congrats!! <%= @applicant.name %>,
+ Congrats!! <%= @applicant.first_name %>,
   You were accepted click the link below for instructions
   <%= link_to "Sign Up", signup_url(email: @applicant.email) %>
 </p>

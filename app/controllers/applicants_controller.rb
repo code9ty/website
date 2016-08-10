@@ -29,6 +29,6 @@ class ApplicantsController < ApplicationController
   end
   private
   def apply_params
-    params.require(:applicant).permit(:name, :email, :github)
+    params.require(:applicant).permit(:first_name, :last_name, :mobile_number, :email, :github)
   end
 end

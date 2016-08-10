@@ -10,10 +10,14 @@
             </ul>
         <% end %>
     <% end %>
-    <%= s.label :name %>
-    <%= s.text_field :name, placeholder: "Name" %>
+    <%= s.label :first_name %>
+    <%= s.text_field :first_name, placeholder: "First Name" %>
+    <%= s.label :last_name %>
+    <%= s.text_field :last_name, placeholder: "Last Name" %>
     <%= s.label :email %>
     <%= s.text_field :email, placeholder: "Email" %>
+    <%= s.label :mobile_number %>
+    <%= s.number_field :mobile_number, placeholder: "Mobile" %>
     <%= s.label :github %>
     (Do not have an account? join github now!!)<%= link_to "here", 'https://github.com' %>
 <%= s.text_field :github, placeholder: "https://github.com/bunch" %>
