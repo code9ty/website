@@ -8,7 +8,11 @@ class ApplicationController < ActionController::Base
   private
 
   def admin?
-    redirect_to root_url unless current_user.admin?
+    if current_user
+      redirect_to root_url unless current_user.admin?
+    else
+      redirect_to login_path
+    end
   end
 
   # redirects to login page if user is not logged in
