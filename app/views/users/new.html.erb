@@ -1,13 +1,11 @@
-<div class="columns">
-    <h1>Register</h1>
-    <% if @user.errors.any? %>
+<div class="columns"> <h1>Register</h1> <% if @user.errors.any? %>
         <% @user.errors.full_messages.each do |msg| %>
             <li>
                 <%= msg %>
             </li>
         <% end %>
     <% end %>
-    <%= form_for @user do |f| %>
+    <%= form_for(@user, url: users_path, method: :post, as: :user) do |f| %>
         <%= f.label :first_name %>
         <%= f.text_field :first_name %>
         <%= f.label :last_name %>
@@ -16,12 +14,12 @@
         <%= f.text_field :university %>
         <%= f.label :year_of_study %>
         <%= f.text_field :year_of_study %>
-        <%= f.label :github, "Github url" %>
-        <%= f.text_field :github %>
+        <%= f.label :github, "Github url"%>
+        <%= f.text_field :github, disabled: @disabled  %>
         <%= f.label :mobile_number %>
         <%= f.text_field :mobile_number %>
         <%= f.label :email %>
-        <%= f.text_field :email %>
+        <%= f.text_field :email, disabled: @disabled %>
         <%= f.label :password %>
         <%= f.password_field :password, placeholder: "At least 6 characters" %>
         <%= f.label :password_confirmation %>
