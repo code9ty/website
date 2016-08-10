@@ -21,7 +21,7 @@
                     <li> <%= link_to  "Feedback", feedback_path%></li>
                 <% else %>
                     <li> <%= link_to 'What we learn', '#' %></li>
-                    <li> <%= link_to 'Apply', apply_path %></li>
+                    <li> <a data-open='apply_reveal'>Apply</a></li>
                     <li> <%= link_to  "Login", login_path%></li>
                 <% end %>
             </ul>

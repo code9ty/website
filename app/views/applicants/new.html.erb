@@ -1,25 +1,14 @@
-<h1>Apply here!!!!</h1>
-
-<%= form_for(:applicant, url: apply_path) do |s| %>
-    <% if @applicant.errors.any? %>
-        <% @applicant.errors.full_messages.each do |msg| %>
-            <ul>
-                <li>
-                    <%= msg %>
-                </li>
-            </ul>
-        <% end %>
+<div class='medium-8 medium-centered columns'>
+  <h1>Apply here!!!!</h1>
+  <% if @applicant.errors.any? %>
+    <% @applicant.errors.full_messages.each do |msg| %>
+      <ul>
+        <li>
+          <%= msg %>
+        </li>
+      </ul>
     <% end %>
-    <%= s.label :first_name %>
-    <%= s.text_field :first_name, placeholder: "First Name" %>
-    <%= s.label :last_name %>
-    <%= s.text_field :last_name, placeholder: "Last Name" %>
-    <%= s.label :email %>
-    <%= s.text_field :email, placeholder: "Email" %>
-    <%= s.label :mobile_number %>
-    <%= s.number_field :mobile_number, placeholder: "Mobile" %>
-    <%= s.label :github %>
-    (Do not have an account? join github now!!)<%= link_to "here", 'https://github.com' %>
-<%= s.text_field :github, placeholder: "https://github.com/bunch" %>
-<%= s.submit "Apply" %>
-<% end %>
+  <% end %>
+
+  <%= render "application_form" %>
+</div>

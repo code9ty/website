@@ -1,0 +1,26 @@
+<%= form_for(:applicant, url: apply_path) do |s| %>
+    <div class='medium-6 columns'>
+      <%= s.label :first_name %>
+      <%= s.text_field :first_name, required: true, placeholder: "First" %>
+    </div>
+    <div class='medium-6 columns'>
+      <%= s.label :last_name %>
+      <%= s.text_field :last_name, required: true,  placeholder: "Last" %>
+    </div>
+    <div class='medium-12 columns'>
+      <%= s.label :email %>
+      <%= s.email_field :email, required: true,  placeholder: "example@email.com" %>
+    </div>
+    <div class='medium-12 columns'>
+      <%= s.label :mobile_number %>
+      <%= s.number_field :mobile_number, required: true,  placeholder: "0712345678" %>
+    </div>
+    <div class='medium-12 columns'>
+      <%= s.label :github %>
+      (Do not have an account? join github now!!)<%= link_to "here", 'https://github.com' %>
+    <%= s.url_field :github, required: true, value: 'https://github.com/', placeholder: "https://github.com/bunch" %>
+    </div>
+    <div class='medium-12 columns'>
+      <%= s.submit "Apply", class: 'button'%>
+    </div>
+<% end %>
