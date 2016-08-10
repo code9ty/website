@@ -3,4 +3,5 @@
 <p>
  Congrats!! <%= @applicant.name %>,
   You were accepted click the link below for instructions
+  <%= link_to "Sign Up", signup_url(email: @applicant.email) %>
 </p>

@@ -21,9 +21,9 @@ class ApplicantsController < ApplicationController
     @applicants = Applicant.where(status: "apply")
   end
   def accept
-    @applicant = Applicant.find(params[:geek])
-    @applicant.update_attributes(status: "accept")
-    ApplicantMailer.applicant_accept(@applicant).deliver_now
+    @accepts = Applicant.find(params[:geek])
+    @accepts.update_attributes(status: "accept")
+    ApplicantMailer.applicant_accept(@accepts).deliver_now
     flash.now[:success] = "Good choice, an email was sent to the applicant"
     @applicants = Applicant.where(status: "accept")
   end

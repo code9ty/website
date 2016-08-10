@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.describe ApplicantMailerMailer, type: :mailer do
+RSpec.describe ApplicantMailer, type: :mailer do
   describe "applicant_accept" do
-    let(:mail) { ApplicantMailerMailer.applicant_accept }
+    let(:mail) { ApplicantMailer.applicant_accept }
 
     it "renders the headers" do
       expect(mail.subject).to eq("Applicant accept")
