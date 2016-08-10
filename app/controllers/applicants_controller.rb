@@ -1,5 +1,5 @@
 class ApplicantsController < ApplicationController
-  before_action 
+  before_action :admin?, only: [:index, :accept]
   def new
     @applicant = Applicant.new
   end
