@@ -6,3 +6,12 @@ majaribu:
     password_digest: <%= User.digest('password')%>
     mobile_number: 0712345678
     admin: true
+
+yulemzi:
+    email: mzi@example.com
+    first_name: yule
+    last_name: mzii
+    github:  "https://github.com/Mzii"
+    password_digest: <%= User.digest('password')%>
+    mobile_number: 1786289522
+
