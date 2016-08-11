@@ -5,3 +5,4 @@ majaribu:
     github:  "https://github.com/Majaribu"
     password_digest: <%= User.digest('password')%>
     mobile_number: 0712345678
+    admin: true
