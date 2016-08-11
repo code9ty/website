@@ -14,13 +14,10 @@
   <body>
       <%= render 'layouts/partials/topbar' %>
       <%= render "layouts/partials/callouts" %>
-      <%# <div class="row"> %>
-      <%#     <div class="column"> %>
               <%= yield %>
-          <%# </div> %>
-      <%# </div> %>
-      </div> <!-- close off-canvas-->
-      </div> <!-- close off-canvas-->
+              <%= render 'static_pages/application_reveal' %>
+      <%# </div> <!-- close off-canvas--> %>
+      <%# </div> <!-- close off-canvas--> %>
 
   </body>
 </html>

@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def admin?
     if current_user
-      redirect_to root_url unless current_user.admin?
+      redirect_to user_path(current_user) unless current_user.admin?
     else
       redirect_to login_path
     end

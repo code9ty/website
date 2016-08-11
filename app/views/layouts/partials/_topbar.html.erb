@@ -1,50 +1,30 @@
-<div class="off-canvas-wrapper">
-    <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
-        <!-- off-canvas title bar for 'small' screen -->
-        <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
-            <div class="title-bar-left">
-                <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
-                <span class="title-bar-title">Menu</span>
-            </div>
-        </div>
-        <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
-            <!-- Close button -->
-            <button class="close-button" aria-label="Close menu" type="button" data-close>
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <h1 id="code90header">#Code90</h1>
-            <ul class="vertical dropdown menu" data-dropdown-menu>
-                <li> <%= link_to "#Code90", root_url %></li>
+<div data-sticky-container>
+    <div class="top-bar" data-sticky id="widemenu" data-options="marginTop:0;"  style="width:100%" data-top-anchor="1" >
+        <div class="top-bar-left">
+            <ul class="menu">
                 <% if logged_in? %>
+            <li> <%= link_to "Home", user_path(current_user) %></li>
+        <% else %>
+            <li> <%= link_to 'Home', home_path %></li>
+        <% end %>
+            </ul>
+        </div>
+        <div class="top-bar-right">
+            <ul class="menu">
+                <% if logged_in? %>
+                    <% if current_user.admin? %>
+                        <li> <%= link_to "Dashboard" , dashboard_path %></li>
+                        <li> <%= link_to "Bids" , bids_path %></li>
+                    <% end %>
                     <li> <%= link_to "Projects", projects_path %> </li>
+                    <li> <%= link_to "Edit Feedback", edit_user_comment_path(current_user) %> </li>
                     <li> <%= link_to  "Feedback", feedback_path%></li>
                 <% else %>
+                    <li> <%= link_to 'What we learn', '#' %></li>
+                    <li> <a data-open='apply_reveal'>Apply</a></li>
                     <li> <%= link_to  "Login", login_path%></li>
                 <% end %>
             </ul>
         </div>
-
-        <div class="top-bar" id="widemenu">
-            <div class="top-bar-left">
-                <ul class="menu">
-                    <% if logged_in? %>
-                        <li> <%= link_to "Home", root_url(id: current_user.id) %></li>
-                    <% end %>
-                </ul>
-            </div>
-            <div class="top-bar-right">
-                <ul class="menu">
-                    <% if logged_in? %>
-                        <% if current_user.admin? %>
-                            <li> <%= link_to "Dashboard" , dashboard_path %></li>
-                            <li> <%= link_to "Bids" , bids_path %></li>
-                            <% end %>
-                        <li> <%= link_to "Projects", projects_path %> </li>
-                        <li> <%= link_to "Edit Feedback", edit_user_comment_path(current_user) %> </li>
-                        <li> <%= link_to  "Feedback", feedback_path%></li>
-                    <% else %>
-                        <li> <%= link_to  "Login", login_path%></li>
-                    <% end %>
-                </ul>
-            </div>
-        </div>
+    </div>
+</div>
