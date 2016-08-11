@@ -21,5 +21,23 @@ class UsersApplicationTest < ActionDispatch::IntegrationTest
 
   end
 
+  test "applicant applying for intake with invalid input" do
+    get root_path
+    get apply_path
+    assert_no_difference 'Applicant.count' do
+    post apply_path params: {
+      applicant: {
+        first_name: "",
+        last_name: "t",
+        email: "gmail.com",
+        mobile_number: "",
+        github: ""
+      }
+    }
+    end
+    assert_not flash.empty?
+    assert_template 'new'
+
+  end
   
 end
