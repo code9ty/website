@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'compass';
 #intro{
-  background-image: url('intro.jpeg');
+  background-image: image-url('intro.jpeg');
   height: 100%;
   @include background-size(cover);
 }
