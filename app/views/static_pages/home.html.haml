@@ -40,16 +40,20 @@
         &#9654;&#xFE0E;
       %ul.orbit-container
         %li.orbit-slide.is-active
-          %div.row
+          .row
             .medium-3.columns
-              = image_tag 'girl.jpg', class: 'thumbnail'
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.  
+              .beneficiary-image= image_tag 'girl.jpg', class: 'thumbnail'
+            %p.beneficiary-message Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.  
         %li.orbit-slide
-          %div
-            %p Morem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.
+          .row
+            .medium-3.columns
+              .beneficiary-image= image_tag 'girl.jpg', class: 'thumbnail'
+            %p.beneficiary-message Morem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.
         %li.orbit-slide
-          %div
-            %p Norem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.
+          .row
+            .medium-3.columns
+              .beneficiary-image= image_tag 'girl.jpg'
+            %p.beneficiary-message Norem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.
       %nav.orbit-bullets
         %button.is-active{"data-slide" => "0"}
           %span.show-for-sr First slide details.

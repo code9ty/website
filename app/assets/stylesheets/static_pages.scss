@@ -54,6 +54,19 @@
      }
    }
  }
+ #feedback {
+     h2 {
+         text-align: center;
+     }
+ }
+ .beneficiary-image {
+     img{
+     border-radius: 50%;
+     }
+ }
+ .beneficiary-message {
+     margin-top: 50px;
+ }
  footer {
    color: #333;
    background-color: #0f0f0f;
