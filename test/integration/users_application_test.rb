@@ -16,6 +16,7 @@ class UsersApplicationTest < ActionDispatch::IntegrationTest
       }
     }
     end
+    # assert_equal 1, ActionMailer::Base.deliveries.size
     assert_not flash.empty?
     assert_template 'show'
 
