@@ -26,9 +26,42 @@
             = image_tag 'girl.jpg', class: 'thumbnail'
             .overlay
               %h3 Lorem 
-#videos
+#feedback
   %h2 What they had to say
   -# .flex-video.vimeo
   -#   %iframe{ width: '400', height: '225', src: 'https://player.vimeo.com/video/388727', frameborder: '0' }
+  .row.collapse.medium-9.columns
+    .orbit{"aria-label" => "#Code90 Beneficiaries", "data-orbit" => "", :role => "region"}
+      %button.orbit-previous
+        %span.show-for-sr Previous Slide
+        &#9664;&#xFE0E;
+      %button.orbit-next
+        %span.show-for-sr Next Slide
+        &#9654;&#xFE0E;
+      %ul.orbit-container
+        %li.orbit-slide.is-active
+          %div.row
+            .medium-3.columns
+              = image_tag 'girl.jpg', class: 'thumbnail'
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.  
+        %li.orbit-slide
+          %div
+            %p Morem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.
+        %li.orbit-slide
+          %div
+            %p Norem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.
+      %nav.orbit-bullets
+        %button.is-active{"data-slide" => "0"}
+          %span.show-for-sr First slide details.
+          %span.show-for-sr Current Slide
+        %button{"data-slide" => "1"}
+          %span.show-for-sr Second slide details.
+        %button{"data-slide" => "2"}
+          %span.show-for-sr Third slide details.
+        %button{"data-slide" => "3"}
+          %span.show-for-sr Fourth slide details.
+  
+
+
 
 %footer#footer
