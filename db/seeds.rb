@@ -38,7 +38,7 @@ end
 project = Project.create!(
   title: "Test Project",
   link: Faker::Internet.url,
-  due_date: 2.days.from_now,
+  # due_date: 2.days.from_now,
   start_date: 10.days.ago
 )
 user.projects = [project]
