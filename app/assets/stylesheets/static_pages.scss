@@ -67,9 +67,21 @@
      @include transition-duration(0.9s);
      &:hover {
        opacity: 1;
-
      }
    }
+ }
+ #feedback {
+     h2 {
+         text-align: center;
+     }
+ }
+ .beneficiary-image {
+     img{
+     border-radius: 50%;
+     }
+ }
+ .beneficiary-message {
+     margin-top: 50px;
  }
  footer {
    color: #333;
