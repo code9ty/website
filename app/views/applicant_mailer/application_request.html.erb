@@ -1,11 +1,11 @@
 <h1>CODE9TY APPLICATION</h1>
 
 <p>
-hello <%= applicant.name %>
+hello <%= @applicant.first_name %>
 </p>
 <p>Thank you for showing interest in code9ty</p>
 <p>This is where you learn code, love it and live it</p>
 <p>All successful applicants will be contacted by the first week of September</p>
-<p>Meanwhile, check our website to learn more about the program</p>
+<p>Meanwhile, check <%= link_to "our website", root_url %> to learn more about the program</p>
 <p><b>Cheers!!</b></p></b>
 </p>

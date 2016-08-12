@@ -8,7 +8,7 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.new(apply_params)
     if @applicant.save
       flash.now[:success] = "Application sent an email will be sent to you if you are choosen"
-      ApplicationMailer.application_request(@applicant).deliver
+      ApplicantMailer.application_request(@applicant).deliver
       # @applicant.send_application_request
       render 'show'
     else
