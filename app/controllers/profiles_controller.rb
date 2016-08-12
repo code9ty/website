@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  def index
+  def pride
     @users = User.all
   end
 end
