@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post 'apply' =>  'applicants#create'
   get 'applicants' => 'applicants#index'
   get 'accept' => 'applicants#accept'
-  get 'profiles' =>'profiles#pride'
+  get 'profiles' =>'users#pride'
   resources :bids
   resources :projects
   resources :assignments, only: [:index, :new, :create]
