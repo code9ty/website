@@ -7,7 +7,7 @@ class ApplicantsController < ApplicationController
   def create
     @applicant = Applicant.new(apply_params)
     if @applicant.save
-      flash.now[:success] = "Application sent an email will be sent to you if you are choosen"
+      flash.now[:success] = "Your application have been received"
       render 'show'
     else
       flash.now[:alert] = "Error saving form"
