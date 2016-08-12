@@ -14,7 +14,7 @@ gem 'faker'
 gem 'pry-rails'
 gem 'foundation-rails'
 gem 'jquery-validation-rails'
-gem 'font-awesome-sass', '~> 4.6.2'
+gem "font-awesome-rails"
 gem 'bcrypt', '~> 3.1.7'
 gem "binding_of_caller"
 gem 'haml'

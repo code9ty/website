@@ -1,26 +1,44 @@
-<%= form_for(:applicant, url: apply_path) do |s| %>
-    <div class='medium-6 columns'>
-      <%= s.label :first_name %>
-      <%= s.text_field :first_name, required: true, placeholder: "First" %>
-    </div>
-    <div class='medium-6 columns'>
-      <%= s.label :last_name %>
-      <%= s.text_field :last_name, required: true,  placeholder: "Last" %>
-    </div>
-    <div class='medium-12 columns'>
-      <%= s.label :email %>
-      <%= s.email_field :email, required: true,  placeholder: "example@email.com" %>
-    </div>
-    <div class='medium-12 columns'>
-      <%= s.label :mobile_number %>
-      <%= s.number_field :mobile_number, required: true,  placeholder: "0712345678" %>
-    </div>
-    <div class='medium-12 columns'>
-      <%= s.label :github %>
-      (Do not have an account? join github now!!)<%= link_to "here", 'https://github.com' %>
-    <%= s.url_field :github, required: true, value: 'https://github.com/', placeholder: "https://github.com/bunch" %>
-    </div>
-    <div class='medium-12 columns'>
-      <%= s.submit "Apply", class: 'button'%>
-    </div>
+<%= form_for(:applicant, url: apply_path, data: { abide: '' }, html: { novalidate: '' }) do |s| %>
+  <div data-abide-error class="alert callout" style="display: none;">
+    <p> <%= fa_icon('exclamation-triangle') %> There are some errors in your form.</p>
+  </div></p>
+  <div class='medium-6 columns'>
+    <%= s.label :first_name %>
+    <%= s.text_field :first_name, required: true, placeholder: "First" %>
+    <span class="form-error">
+      We need to know you
+    </span>
+  </div>
+  <div class='medium-6 columns'>
+    <%= s.label :last_name %>
+    <%= s.text_field :last_name, required: true,  placeholder: "Last" %>
+    <span class="form-error">
+      We need to know you
+    </span>
+  </div>
+  <div class='medium-12 columns'>
+    <%= s.label :email %>
+    <%= s.email_field :email, required: true,  placeholder: "example@email.com" %>
+    <span class="form-error">
+      Seems like you mistyped your email address
+    </span>
+  </div>
+  <div class='medium-12 columns'>
+    <%= s.label :mobile_number %>
+    <%= s.number_field :mobile_number, required: true, pattern: 'min_10', placeholder: "0712345678" %>
+    <span class="form-error">
+      This number seems a bit off
+    </span>
+  </div>
+  <div class='medium-12 columns'>
+    <%= s.label :github %>
+    (Do not have an account? join github now!!)<%= link_to "here", 'https://github.com/join' %>
+  <%= s.url_field :github, pattern: 'github',required: true, value: 'https://github.com/', placeholder: "https://github.com/bunch" %>
+    <span class="form-error">
+      GitHub accounts only
+    </span>
+  </div>
+  <div class='medium-12 columns'>
+    <%= s.submit "Apply", class: 'button'%>
+  </div>
 <% end %>

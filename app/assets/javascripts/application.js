@@ -20,4 +20,6 @@
 
 document.addEventListener('turbolinks:load', function () {
   $(function () { $(document).foundation() })
+  Foundation.Abide.defaults.patterns['min_10'] = /^.{10,}$/;
+  Foundation.Abide.defaults.patterns['github'] = /^https:\/\/github.com\/\S+/;
 })
