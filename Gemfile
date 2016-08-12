@@ -42,7 +42,7 @@ group :production do
 end
 
 group :development do
-  # gem "letter_opener"
+  gem "letter_opener"
   gem 'web-console', github: 'rails/web-console'
   gem 'listen', '~> 3.0.5'
   gem 'byebug'
