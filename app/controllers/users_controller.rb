@@ -4,6 +4,9 @@ class UsersController < ApplicationController
   def index
     @users = User.all
   end
+  def pride
+    @users = User.all
+  end
   def new
     if params[:email]
       applicant = Applicant.find_by_email(params[:email])

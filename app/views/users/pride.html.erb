@@ -1,0 +1,13 @@
+<h4 id="msg">Meet some the First Cohort Code9ty members.<br>
+    Feel free to check their projects on Github </h4>
+<% @users.each do |user| %>
+    <div id="prof">
+        <div class="medium-3 columns medium-offset-1">
+            <ul class="no-bullet">
+                <%= gravatar_for user %>
+                <li> <%= user.full_name %></li>
+                <li><%= user.github %></li>
+            </ul>
+        </div>
+    </div>
+<% end %>
