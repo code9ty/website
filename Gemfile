@@ -23,9 +23,6 @@ gem 'roadie'
 gem 'roadie-rails'
 
 group :development, :test do
-  gem 'rspec', '~> 3.5.0.beta3'
-  gem 'rspec-core', '~> 3.5.0.beta3'
-  gem 'rspec-rails', '~> 3.5.0.beta3'
   gem 'factory_girl_rails'
   gem 'rails-controller-testing'
   gem 'capybara'
@@ -54,7 +51,6 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-livereload', require: false
-  gem 'guard-rspec', '~>4.6.5'
   gem 'quiet_assets'
   gem 'rails_layout'
 end

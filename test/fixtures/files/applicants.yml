@@ -1,0 +1,9 @@
+first:
+   first_name: Majaribu
+   email: majaribu@example.com
+   github:  "https://github.com/Majaribu"
+   status: accept
+   last_name: Example
+   password_digest: <%= User.digest('password')%>
+   mobile_number: 0712345678
+

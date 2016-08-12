@@ -7,9 +7,9 @@ class ApplicantMailerPreview < ActionMailer::Preview
     ApplicantMailer.applicant_accept(applicant)
   end
 
+  # Preview this email at http://localhost:3000/rails/mailers/applicant_mailer/application_request
   def application_request
-    applicant = users(:first)
-    ApplicantMailer.application_request(applicant)
+    ApplicantMailer.application_request(Applicant.first)
   end
 
 end
