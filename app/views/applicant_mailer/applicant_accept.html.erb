@@ -1,7 +1,9 @@
-<h1>Code</h1>
+<h1>You made it!!</h1>
+
 
 <p>
- Congrats!! <%= @applicant.first_name %>,
-  You were accepted click the link below for instructions
+Congratulations <%= @applicant.first_name %>,</p>
+ You were accepted to code9ty cohort B application.</p>
+ <p>Click on the link below to create your account</p>
   <%= link_to "Sign Up", signup_url(email: @applicant.email) %>
 </p>
