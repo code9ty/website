@@ -15,3 +15,11 @@ yulemzi:
     password_digest: <%= User.digest('password')%>
     mobile_number: 1786289522
 
+einstein:
+    email: qhbak@example.com
+    first_name: qbfkqlyule
+    last_name: mziidak
+    github:  "https://github.com/jqbakj"
+    password_digest: <%= User.digest('password')%>
+    mobile_number: 1786312332
+
