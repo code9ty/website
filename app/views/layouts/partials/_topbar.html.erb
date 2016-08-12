@@ -23,8 +23,8 @@
                 <% end %>
             <% else %>
                 <li> <%= link_to fa_icon('leanpub', text: 'What we learnt'), '#' %></li>
-                <li> <%= link_to fa_icon('user-plus', text: 'Profile'), '#' %></li>
-                <li> <a data-open='apply_reveal'><%= fa_icon('home')%>Apply</a></li>
+                <%# <li> <%= link_to fa_icon('user-plus', text: 'Profile'), '#' %1></li> %>
+                <li> <a data-open='apply_reveal'><%= fa_icon('user-plus')%>Apply</a></li>
                 <li> <%= link_to fa_icon('sign-in', text: "Login"), login_path%></li>
             <% end %>
             </ul>
