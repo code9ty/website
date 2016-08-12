@@ -1,0 +1,9 @@
+@mixin center-text($translate-left, $translate-right){
+  left: 50%;
+  margin-right: -50%;
+  transform: translate($translate-left, $translate-right);
+  position: absolute;
+  top: 50%;
+  text-align: center;
+
+} 
