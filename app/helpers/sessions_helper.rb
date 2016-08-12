@@ -22,6 +22,7 @@ module SessionsHelper
   end
   #logs out a logged in user
   def log_out
+    forget(current_user)
     session.delete(:user_id)
     @current_user = nil
   end
@@ -36,5 +37,12 @@ module SessionsHelper
   #returns true is user passed equal to current user
   def current_user?(user)
     user == current_user
+  end
+
+  #Forgets a persistent session
+  def forget(user)
+    user.forget
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
   end
 end

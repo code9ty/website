@@ -1,5 +1,5 @@
 body {
-    color: #34495E !important;
+    color: #34495E;
 }
 .off-canvas {
     height: 100%;
@@ -29,6 +29,9 @@ body {
       // background: #3ADB76;
       border-bottom: #3ADB76 solid 4px;
     }
+    .fa-home {
+      font-size: 1.4em;
+    }
   }
   ul {
     background-color: inherit;
@@ -47,4 +50,7 @@ body {
 }
 #messages.success {
     background-color:#00cc49; 
+}
+.nav_item{
+     display: inline;
 }
