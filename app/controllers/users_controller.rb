@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, except:[:index] unless Rails.env.development?
+  before_action :logged_in_user
   before_action :correct_user, only:[:show, :update, :edit]
   def index
     @users = User.all
