@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'profiles/index'
-
   get 'home' => 'static_pages#home'
   root 'static_pages#home'
   get 'signup' => 'users#new'
@@ -16,6 +14,7 @@ Rails.application.routes.draw do
   post 'apply' =>  'applicants#create'
   get 'applicants' => 'applicants#index'
   get 'accept' => 'applicants#accept'
+  get 'profiles' =>'profiles#index'
   resources :bids
   resources :projects
   resources :assignments, only: [:index, :new, :create]
