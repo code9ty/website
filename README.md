@@ -1,24 +1,16 @@
-# README
+# Code9ty official Website
+This is an open source website for the code90 program. 
+Feel free to contribute in it
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## How to contribute
+If you wish to make some changes in this application or fis a bug, you can fork the repository
 
-Things you may want to cover:
+Below are the steps
+ 1. Fork it
+ 2. Create a branch
+ 3. Commit your changes
+ 4. Push to the branch
+ 5. Create a pull request
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Contributors
+Anyone is feels to contribute on this application
