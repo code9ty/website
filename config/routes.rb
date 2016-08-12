@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'profiles/index'
+
   get 'home' => 'static_pages#home'
   root 'static_pages#home'
   get 'signup' => 'users#new'
