@@ -6,7 +6,7 @@ class LinksTest < ActionDispatch::IntegrationTest
     @user = users(:yulemzi)
   end
 
-  test "links if applicant" do
+  test "links if visitor" do
     get root_path
     assert_select "a[href=?]", home_path
     assert_select "a[href=?]", login_path
