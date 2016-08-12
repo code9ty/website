@@ -7,6 +7,7 @@ class AssignmentsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     log_in_as(@user)
     get new_assignment_path
+    assert_response :success
   end
 
 end
