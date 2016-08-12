@@ -7,4 +7,9 @@ class ApplicantMailerPreview < ActionMailer::Preview
     ApplicantMailer.applicant_accept(applicant)
   end
 
+  def application_request
+    applicant = Applicant.first
+    ApplicantMailer.application_request(applicant)
+  end
+
 end
