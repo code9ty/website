@@ -1,0 +1,15 @@
+majaribu:
+   first_name: Majaribu
+   email: majaribu@example.com
+   github:  "https://github.com/Majaribu"
+   status: accept
+   last_name: Example
+   mobile_number: 0712345678
+
+maris: 
+  first_name: Maris
+  email: maris@gmail.com
+  github: "https://github.com/maris"
+  last_name: Njage
+  mobile_number: 0712345678
+

@@ -1,3 +1,6 @@
+You made it!!
 
- Congrats!! <%= @applicant.first_name %>,
-  You were accepted click the link below for instructions
+ You were accepted to code9ty cohort B application.
+ Click on the link below to create your account
+  <%=  signup_url(email: @applicant.email) %>
+
