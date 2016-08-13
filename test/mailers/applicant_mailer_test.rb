@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ApplicantMailerTest < ActionMailer::TestCase
   test "applicant_accept" do
-    applicant = applicants(:first)
+    applicant = applicants(:majaribu)
     mail = ApplicantMailer.applicant_accept applicant
     assert_equal "Application Accepted", mail.subject
     assert_equal [applicant.email], mail.to
@@ -12,7 +12,7 @@ class ApplicantMailerTest < ActionMailer::TestCase
   end
 
   test "application_request" do
-    applicant = applicants(:first)
+    applicant = applicants(:majaribu)
     mail = ApplicantMailer.application_request applicant
     assert_equal "Application Request", mail.subject
     assert_equal [applicant.email], mail.to
