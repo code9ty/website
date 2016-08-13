@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user
+  before_action :logged_in_user, except: [:pride]
   before_action :correct_user, only:[:show, :update, :edit]
   def index
     @users = User.all
