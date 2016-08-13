@@ -41,9 +41,11 @@ body {
 }
 #messages{
     color: white;
+    margin: 0;
+
     .close-button {
       color: white;
-    }
+         }
 }
 #messages.alert {
     background-color: #ff2700;
