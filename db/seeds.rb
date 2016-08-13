@@ -5,7 +5,7 @@ user = User.create!(
  year_of_study: "4",
  github: "https://github.com/Makatunga",
  mobile_number: "0712345678",
- email: "andrewhenry08@gmail.com",
+ email: "makatunga@makatunga.com",
  password: "cartoon",
  password_confirmation: "cartoon",
  treasurer: false,
