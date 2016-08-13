@@ -22,8 +22,8 @@
                     <li> <%= link_to fa_icon( 'arrow-down', text: "Feedback"), feedback_path%>
                     <li> <%= link_to fa_icon('power-off', text: "logout"), logout_path, method: :delete %></li>
             <% else %>
-                <li> <%= link_to fa_icon('leanpub', text: 'What we learn'), what_path %></li>
-                <li> <a data-open='apply_reveal'><%= fa_icon('user-plus')%> Apply</a></li>
+                <li> <%= link_to 'What we learn', what_path %></li>
+                <li> <a data-open='apply_reveal'>Apply</a></li>
                 <li> <%= link_to fa_icon('sign-in', text: "Login"), login_path%></li>
             <% end %>
             </ul>

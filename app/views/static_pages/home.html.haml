@@ -2,7 +2,8 @@
   .page_centered
     %h1
       \ #code9ty
-    = fa_icon('play-circle-o')
+    %a{data: { open:'video_reveal' }}
+      = image_tag('play')
     %p
       Rock On Rails!
     %button.button.success.shadowed{'data-open' => 'apply_reveal'}
@@ -10,33 +11,38 @@
 #we_are
   .row
     .medium-4.columns
+      = fa_icon('code')
       %h3 Learn code
       %p Are you a tech enthuasist ? Having you ever wished to learn how to code in an intreactive and interesting way? Then you are probably in the right place. At code9ty we learn code, have fun and supercharge our brains.
     .medium-4.columns
+      = fa_icon('code-fork')
       %h3 Why 90
       %p code9ty in an interactive program with people form diverse background, anyone be accepted in it. 90 represents 90 days of continuous of fun and coding,during the duration we ensure that we write code daily and commit daily in our github accounts. We also learn new ideas daily and gather wide variety of knowlegde and the most exciting part of it is the bonding and mad fun that happen during our Keep awake sessions
     .medium-4.columns
+      = fa_icon('laptop')
       %h3 Prerequisite 
       %p Before you apply kindly ensure that :-
       %p You are interested in learning new ideas
       %p Are available for 90 days
       %p You have a working laptop
-#apply
+-# #apply
   %h2 Application Open!
   %button.button.success.shadowed{'data-open' => 'apply_reveal'}
     Apply Now!
   - render "application_reveal"
 
 #cohort
-  %h2 Check this out
+  %h2 We don't just code
   .row.collapse.medium-9.columns
     .small-up-1.medium-up-4
-      - 8.times do
-        .column
+      - 8.times do |n|
+        .column.pic
           .item-wrap
-            = image_tag 'girl.jpg', class: 'thumbnail'
+            = image_tag "good_time/th/0#{n}.jpg", class: 'thumbnail'
             .overlay
               %h3 Lorem 
+    %p
+      It's always a good time #{fa_icon('smile-o')}
 #feedback
   %h2 What they had to say
   -# .flex-video.vimeo
