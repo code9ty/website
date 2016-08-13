@@ -7,7 +7,10 @@
     %p
       Rock On Rails!
     %button.button.success.shadowed{'data-open' => 'apply_reveal'}
-      Apply Now!
+      - if @open
+        Apply Now!
+      - else
+        Application Opening Soon
 #we_are
   .row
     .medium-4.columns

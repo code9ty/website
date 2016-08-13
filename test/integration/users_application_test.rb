@@ -3,6 +3,8 @@ require 'test_helper'
 class UsersApplicationTest < ActionDispatch::IntegrationTest 
 
   test "applicant applying for intake with valid input" do
+    #open application 
+    @open = true
     get root_path
     get apply_path
     assert_difference 'Applicant.count', 1 do
@@ -24,6 +26,8 @@ class UsersApplicationTest < ActionDispatch::IntegrationTest
   end
 
   test "applicant applying for intake with invalid input" do
+    #open application 
+    @open = true
     get root_path
     get apply_path
     assert_no_difference 'Applicant.count' do

@@ -23,7 +23,9 @@
                     <li> <%= link_to fa_icon('power-off', text: "logout"), logout_path, method: :delete %></li>
             <% else %>
                 <li> <%= link_to 'What we learn', what_path %></li>
+                <% if @open %>
                 <li> <a data-open='apply_reveal'>Apply</a></li>
+                <% end %>
                 <li> <%= link_to fa_icon('sign-in', text: "Login"), login_path%></li>
             <% end %>
             </ul>

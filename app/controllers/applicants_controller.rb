@@ -5,10 +5,14 @@ class ApplicantsController < ApplicationController
   end
 
   def create
+    open = false
     @applicant = Applicant.new(apply_params)
-    if @applicant.save
+    if @applicant.save && open
       flash.now[:success] = "Your application have been received"
       render 'show'
+    elsif !open
+      flash[:alert] = "We are not open for now!"
+      redirect_to root_url
     else
       flash.now[:alert] = "Error saving form"
       render 'new'
