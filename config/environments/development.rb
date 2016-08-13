@@ -28,7 +28,7 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :test
+  config.action_mailer.delivery_method = :letter_opener
   host = 'localhost:3000'
   config.action_mailer.default_url_options = { host: host  }
 
@@ -47,8 +47,8 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-
   # Use an evented file watcher to asynchronously detect changes in source code,
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end
