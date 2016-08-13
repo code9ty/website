@@ -8,7 +8,7 @@ class ApplicantMailerPreview < ActionMailer::Preview
   end
 
   def application_request
-    applicant = users(:first)
+    applicant = Applicant.first
     ApplicantMailer.application_request(applicant)
   end
 

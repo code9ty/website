@@ -2,19 +2,23 @@ require 'test_helper'
 
 class ApplicantMailerTest < ActionMailer::TestCase
   test "applicant_accept" do
-    mail = ApplicantMailer.applicant_accept
-    assert_equal "Applicant accept", mail.subject
-    assert_equal ["to@example.org"], mail.to
-    assert_equal ["from@example.com"], mail.from
-    assert_match "Hi", mail.body.encoded
+    applicant = applicants(:first)
+    mail = ApplicantMailer.applicant_accept applicant
+    assert_equal "Application Accepted", mail.subject
+    assert_equal [applicant.email], mail.to
+    assert_equal ["code9ty@lakehub.co.ke"], mail.from
+    assert_match applicant.first_name,               mail.body.encoded
+    assert_match CGI::escape(applicant.email), mail.body.encoded
   end
 
   test "application_request" do
-    mail = ApplicantMailer.application_request
-    assert_equal "Application request", mail.subject
-    assert_equal ["to@example.org"], mail.to
-    assert_equal ["from@example.com"], mail.from
-    assert_match "Hi", mail.body.encoded
+    applicant = applicants(:first)
+    mail = ApplicantMailer.application_request applicant
+    assert_equal "Application Request", mail.subject
+    assert_equal [applicant.email], mail.to
+    assert_equal ["code9ty@lakehub.co.ke"], mail.from
+    assert_match applicant.first_name,               mail.body.encoded
+    assert_match CGI::escape(applicant.first_name), mail.body.encoded
   end
 
 end
