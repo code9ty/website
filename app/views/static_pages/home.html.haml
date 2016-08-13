@@ -41,6 +41,7 @@
   %h2 What they had to say
   -# .flex-video.vimeo
   -#   %iframe{ width: '400', height: '225', src: 'https://player.vimeo.com/video/388727', frameborder: '0' }
+  -# Andy, Getty, Kevo, Cess, Mussa, Stl, Oliver
   .row.collapse.medium-9.columns
     .orbit{"aria-label" => "#Code90 Beneficiaries", "data-orbit" => "", :role => "region"}
       %button.orbit-previous
@@ -53,18 +54,38 @@
         %li.orbit-slide.is-active
           .row
             .medium-3.columns
-              .beneficiary-image= image_tag 'girl.jpg', class: 'thumbnail'
+              .beneficiary-image= gravatar_for(find_me("andystudy4@gmail.com"))
             %p.beneficiary-message Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.  
         %li.orbit-slide
           .row
             .medium-3.columns
-              .beneficiary-image= image_tag 'girl.jpg', class: 'thumbnail'
+              .beneficiary-image= gravatar_for(find_me("gettyorawo@gmail.com"))
+            %p.beneficiary-message Norem ipsum dolor sit amet, consectetur adipisi
+        %li.orbit-slide
+          .row
+            .medium-3.columns
+              .beneficiary-image= gravatar_for(find_me("kevinochieng548@gmail.com"))
+            %p.beneficiary-message Norem ipsum dolor sit amet, consectetur adipisi           
+        %li.orbit-slide
+          .row
+            .medium-3.columns
+              .beneficiary-image= gravatar_for(find_me("cessmbuguar@gmail.com"))
             %p.beneficiary-message Morem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.
         %li.orbit-slide
           .row
             .medium-3.columns
-              .beneficiary-image= image_tag 'girl.jpg'
+              .beneficiary-image= gravatar_for(find_me("stellamarisnjage@gmail.com"))
             %p.beneficiary-message Norem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.
+        %li.orbit-slide
+          .row
+            .medium-3.columns
+              .beneficiary-image= gravatar_for(find_me("amokem@yahoo.com"))
+            %p.beneficiary-message Norem ipsum dolor sit amet, consectetur adipisicing elit. Unde harum rem, beatae ipsa consectetur quisquam. Rerum ratione, delectus atque tempore sed, suscipit ullam, beatae distinctio cupiditate ipsam eligendi tempora expedita.
+        %li.orbit-slide
+          .row
+            .medium-3.columns
+              .beneficiary-image= gravatar_for(find_me("oliverokwaro@gmail.com"))
+            %p.beneficiary-message Norem ipsum dolor sit amet, consectet   
       %nav.orbit-bullets
         %button.is-active{"data-slide" => "0"}
           %span.show-for-sr First slide details.
@@ -75,8 +96,11 @@
           %span.show-for-sr Third slide details.
         %button{"data-slide" => "3"}
           %span.show-for-sr Fourth slide details.
-  
-
-
+        %button{"data-slide" => "4"}
+          %span.show-for-sr Second slide details.
+        %button{"data-slide" => "5"}
+          %span.show-for-sr Second slide details.
+        %button{"data-slide" => "6"}
+          %span.show-for-sr Second slide details.
 
 %footer#footer
