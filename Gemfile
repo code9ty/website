@@ -21,6 +21,7 @@ gem 'roadie-rails'
 group :development, :test do
   gem 'rails-controller-testing'
   gem 'sqlite3'
+  gem 'guard'
   gem 'guard-minitest'
   gem 'byebug', platform: :mri
 end

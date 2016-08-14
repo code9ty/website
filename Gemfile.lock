@@ -299,6 +299,7 @@ DEPENDENCIES
   faker
   font-awesome-rails
   foundation-rails
+  guard
   guard-bundler
   guard-livereload
   guard-minitest
