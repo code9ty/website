@@ -6,7 +6,7 @@
             <ul class="no-bullet">
                 <%= gravatar_for user %>
                 <li> <%= user.full_name %></li>
-                <li><%= user.github %></li>
+                <li><%= link_to user.github, user.github %></li>
             </ul>
         </div>
     </div>

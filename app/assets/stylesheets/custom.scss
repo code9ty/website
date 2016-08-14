@@ -41,9 +41,11 @@ body {
 }
 #messages{
     color: white;
+    margin-bottom: 0;
+
     .close-button {
       color: white;
-    }
+         }
 }
 #messages.alert {
     background-color: #ff2700;
@@ -53,5 +55,9 @@ body {
 }
 #top_row {
     margin-top: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+}
+#footer {
+    color:white;
+    font-size:1em;
 }
