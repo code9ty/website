@@ -3,19 +3,15 @@ require 'test_helper'
 class UsersApplicationTest < ActionDispatch::IntegrationTest 
 
   test "applicant applying for intake with valid input" do
-    #open application 
-    @open = true
-    get root_path
-    get apply_path
     assert_difference 'Applicant.count', 1 do
-    post apply_path params: {
-      applicant: {
-        first_name: "Antony",
-        last_name: "Bond",
-        email: "eintein@gmail.com",
-        mobile_number: "0158752912",
-        github: "http://github.com/r9fwbsjk"
-      }
+      post apply_path params: {
+        applicant: {
+          first_name: "Antony",
+          last_name: "Bond",
+          email: "eintein@gmail.com",
+          mobile_number: "0158752912",
+          github: "http://github.com/r9fwbsjk"
+        }
     }
     end
     #confirm email is sent after after successful application
@@ -26,8 +22,6 @@ class UsersApplicationTest < ActionDispatch::IntegrationTest
   end
 
   test "applicant applying for intake with invalid input" do
-    #open application 
-    @open = true
     get root_path
     get apply_path
     assert_no_difference 'Applicant.count' do

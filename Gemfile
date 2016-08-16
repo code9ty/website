@@ -29,6 +29,7 @@ end
 group :test do
   gem 'minitest-rails-capybara'
   gem 'minitest-reporters'
+  gem 'selenium-webdriver'
 end
 
 group :production do

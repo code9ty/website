@@ -1,0 +1,5 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+open:
+  start_date: <%= Time.zone.now %>
+  last_date: <%= 2.days.from_now %>

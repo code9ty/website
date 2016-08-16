@@ -1,17 +1,17 @@
 class ApplicantsController < ApplicationController
   before_action :admin?, only: [:index, :accept]
+  before_action :check_intake_open, except: :accept
   def new
     @applicant = Applicant.new
   end
 
   def create
-    open = false
     @applicant = Applicant.new(apply_params)
-    if @applicant.save && open
+    if @applicant.save && @open
       flash.now[:success] = "Your application have been received"
       ApplicantMailer.application_request(@applicant).deliver
       render 'show'
-    elsif !open
+    elsif !@open
       flash[:alert] = "We are not open for now!"
       redirect_to root_url
     else
@@ -35,5 +35,13 @@ class ApplicantsController < ApplicationController
   private
   def apply_params
     params.require(:applicant).permit(:first_name, :last_name, :mobile_number, :email, :github)
+  end
+
+  def check_intake_open
+    @open = Intake.open?
+    unless @open
+      redirect_to root_url
+      flash[:alert] = 'Please wait for the next intake!'
+    end
   end
 end

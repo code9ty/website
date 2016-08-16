@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include UsersHelper
 
-
   private
 
   def admin?
