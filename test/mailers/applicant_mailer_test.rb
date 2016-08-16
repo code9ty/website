@@ -17,7 +17,7 @@ class ApplicantMailerTest < ActionMailer::TestCase
     assert_equal "Application Request", mail.subject
     assert_equal [applicant.email], mail.to
     assert_equal ["code9ty@lakehub.co.ke"], mail.from
-    assert_match applicant.first_name,               mail.body.encoded
+    assert_match applicant.first_name, mail.body.encoded
     assert_match CGI::escape(applicant.first_name), mail.body.encoded
   end
 

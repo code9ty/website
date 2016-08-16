@@ -8,7 +8,7 @@ class ApplicantsController < ApplicationController
   def create
     @applicant = Applicant.new(apply_params)
     if @applicant.save && @open
-      flash.now[:success] = "Your application have been received"
+      flash.now[:success] = "Your application has been received"
       ApplicantMailer.application_request(@applicant).deliver
       render 'show'
     elsif !@open

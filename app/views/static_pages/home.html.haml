@@ -10,7 +10,7 @@
       - if @open
         Apply Now!
       - else
-        Application Opening Soon
+        Application starts #{next_intake_date}
 #we_are
   .row
     .medium-4.columns
@@ -20,7 +20,7 @@
     .medium-4.columns
       = fa_icon('code-fork')
       %h3 Why 90
-      %p Code9ty in an interactive  and diverse program that involves intense coding for 90 consecutive days. You get to keep track of your daily progress using the useful version control software-Git. All this sums up to 90 days of supercharging your brains with technologies that will make you one of the best rails developers around. 
+      %p Code9ty in an interactive  and diverse program that involves intense coding for 90 consecutive days. You get to keep track of your daily progress using the useful version control software-Git. All this sums up to 90 days of supercharging your brains with technologies that will make you one of the best rails developers around.
     .medium-4.columns
       = fa_icon('laptop')
       %h3 Prequalification
@@ -43,13 +43,12 @@
           .item-wrap
             = image_tag "good_time/th/0#{n}.jpg", class: 'thumbnail'
             .overlay
-              %h3 Lorem 
+              %h3 Its always a good time #{fa_icon('smile-o')}
+              come join the fun!
     %p
       It's always a good time #{fa_icon('smile-o')}
 #feedback
   %h2 What they had to say
-  -# .flex-video.vimeo
-  -#   %iframe{ width: '400', height: '225', src: 'https://player.vimeo.com/video/388727', frameborder: '0' }
   -# Andy, Getty, Kevo, Cess, Mussa, Stl, Oliver
   .row.collapse.medium-9.columns
     .orbit{"aria-label" => "#Code90 Beneficiaries", "data-orbit" => "", :role => "region"}
@@ -64,12 +63,12 @@
           .row
             .medium-3.columns
               .beneficiary-image= gravatar_for(find_me("andrewhenry08@gmail.com"))
-            %p.beneficiary-message When I joined #code9ty I could only build static and boring web pages, but now I can confidently develop complete, responsive and interactive websites and web applications. All thanks to the intensive web development program at #code9ty! 
+            %p.beneficiary-message When I joined #code9ty I could only build static and boring web pages, but now I can confidently develop complete, responsive and interactive websites and web applications. All thanks to the intensive web development program at #code9ty!
         %li.orbit-slide
           .row
             .medium-3.columns
               .beneficiary-image= gravatar_for(find_me("gettyorawo@gmail.com"))
-            %p.beneficiary-message My experience at LakeHub, specifically #code9ty, has been phenominal and amazing. I learnt to rock on Rails in just 90 days and I can proudly say that I'm now good at it. 
+            %p.beneficiary-message My experience at LakeHub, specifically #code9ty, has been phenominal and amazing. I learnt to rock on Rails in just 90 days and I can proudly say that I'm now good at it.
         %li.orbit-slide
           .row
             .medium-3.columns
@@ -89,7 +88,7 @@
           .row
             .medium-3.columns
               .beneficiary-image= gravatar_for(find_me("amokem@yahoo.com"))
-            %p.beneficiary-message Coding has not been my thing until I met this wonderful team at #code9ty. My entire coding perspective has changed. Am glad and happy that I joined the group. 
+            %p.beneficiary-message Coding has not been my thing until I met this wonderful team at #code9ty. My entire coding perspective has changed. Am glad and happy that I joined the group.
         %li.orbit-slide
           .row
             .medium-3.columns
@@ -114,4 +113,7 @@
 
 = render 'static_pages/application_reveal' if @open
 %footer#footer
-  &copy; #Code9ty 2016
+  This website was developed by the first #Code9ty cohort </br>
+  %small
+    check it out #{link_to 'here', 'https://github.com/code9ty/website'} on github </br>
+  &copy; #Code9ty 2016 </br>

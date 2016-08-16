@@ -1,16 +1,24 @@
 <%# |<%= link_to "All", applicants_path %1>| %>
 <div class= row>
-<div class="medium-6 colums medium-offset-3">
-Hello  <%= @applicant.first_name  %>!!!
-<p> Thank you for applying for #code90.
-An email has been sent to your account</p>
-<p> Here are some of the things we need you to do though</p>
-<ul>
-    <li>If you are unfamiliar with github, you need to learn some basic concepts about and how to navigate through it from online resources.</li>
-    <li>Write your resume(CV) in html and css and post it on your github account</li>
-    <li>If you are shortlisted, your Laptop should have linux based operating system installed in it, preferably Ubuntu. </li>
-</ul>
-<p> Good luck  Cheers!!</p>
-<p> (Admin)
-</div>
+  <div class="medium-6 colums medium-centered">
+    <h2>Important! Please read</h2>
+    Hello  <%= @applicant.first_name  %>!!!
+    <p> Thank you for applying for #code9ty.
+    An email has been sent to your account</p>
+    <p> Here are some of the things we need you to do though</p>
+    <ul>
+      <li>If you are unfamiliar with github, you need to learn some basic concepts about and how to navigate through it from online resources.</li>
+      <li>Write your resume(CV) in html and css and post it on your github account ( we will use this to gauge your determination on learning code, make an effort )</li>
+      * <small> This CV doest have to look good, just show us you have the interest</small>
+      <li>If you are shortlisted, your Laptop should have linux based operating system installed in it, preferably Ubuntu. </li>
+    </ul>
+    <p>All successful applicants will pay a subsidised facilitation fee of Kshs. 6,000.00.
+    However, only Ksh. 3000 will be required on the start date and the rest of the payment within
+    the first 4 weeks</p>
+
+    <p> Good luck  Cheers!!</p>
+    <p> (Admin) </p>
+    <small>This application process was designed and developed by <%= link_to "Cess", "https://github.com/cesswairimu/" %>, member of previous #code9ty cohort. Feel
+    free to checkout some of <%= link_to 'the projects', 'https://github.com/cesswairimu/'%> she did during <strong>#code9ty</strong></small>
+  </div>
 </div>
