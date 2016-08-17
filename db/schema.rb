@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160814160323) do
+ActiveRecord::Schema.define(version: 20160816195417) do
 
   create_table "applicants", force: :cascade do |t|
     t.string   "first_name"
@@ -78,6 +78,13 @@ ActiveRecord::Schema.define(version: 20160814160323) do
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "due_date"
+    t.datetime "start_date"
+  end
+
+  create_table "projects_users", id: false, force: :cascade do |t|
+    t.integer "user_id",    null: false
+    t.integer "project_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -94,6 +101,8 @@ ActiveRecord::Schema.define(version: 20160814160323) do
     t.string   "remember_digest"
     t.boolean  "treasurer",       default: false
     t.boolean  "admin"
+    t.boolean  "visible"
+    t.text     "testimony"
   end
 
 end

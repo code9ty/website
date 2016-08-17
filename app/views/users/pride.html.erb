@@ -1,13 +1,23 @@
-<h4 id="msg">Meet some the First Cohort Code9ty members.<br>
+<div id='profile'>
+  <h4 id="msg">Meet some the First Cohort #Code9ty members.<br>
     Feel free to check their projects on Github </h4>
-<% @users.each do |user| %>
-    <div id="prof">
-        <div class="medium-3 columns medium-offset-1">
-            <ul class="no-bullet">
-                <%= gravatar_for user %>
-                <li> <%= user.full_name %></li>
-                <li><%= link_to user.github, user.github %></li>
-            </ul>
+  <div class="row medium-10 columns" data-equalizer>
+    <div class="small-up-1 medium-up-3">
+      <% @users.each do |user| %>
+        <div class='column' data-equalizer-watch>
+          <div class='callout' >
+            <%= gravatar_for user %>
+            <p><%= fa_icon('user', text: user.full_name) %> </p>
+            <p> <%= link_to  fa_icon('github', text: user.github), user.github %> </p>
+            <p> <%= fa_icon('users') %> Awesome Akaringula </p>
+            <% if user.testimony %>
+              <hr>
+              <p class='testimony'> <%= user.testimony %></p>
+            <% end %>
+          </div>
         </div>
+      <% end %>
     </div>
-<% end %>
+
+  </div>
+</div>

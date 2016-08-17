@@ -22,7 +22,45 @@
     padding-top: 32.5px;
     padding-bottom: 50px;
 }
-#prof {
-      background: #672847;
-}
+#profile{
+  .fa {
+    font-size: 1.4em;
+    color: #444;
+  }
+  .gravatar {
+     min-height: 100px;
+     min-width: 100px;
+     border: 2px solid #444;
+     padding: 2px;
+     border-radius: 20px;
+     margin-bottom: 10px;
+  }
+  p {
+     margin-bottom: 0.5em;
+  }
+  hr {
+    max-width: 75rem;
+    height: 0;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid #cacaca;
+    border-left: 0;
+    margin-top: 1.2em;
+    clear: both;
+    margin-left: 6em;
+    margin-right: 1em;
+    margin-bottom: 15px;
 
+  }
+
+  .prof {
+    background: #672847;
+  }
+  .testimony {
+    padding-left: 20px;
+    text-align: right;
+    font-size: small;
+
+  }
+
+}

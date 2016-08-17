@@ -21,6 +21,7 @@ user = User.create!(
    email= Faker::Internet.email
    password= "cartoon"
    treasurer= false
+   testimony = "My experience at LakeHub, specifically #code9ty, has been phenominal and amazing. I learnt to rock on Rails in just 90 days and I can proudly say that I'm now good at it."
    admin = false
    User.create!(first_name: first_name,
                last_name: last_name,
@@ -32,7 +33,8 @@ user = User.create!(
                password: password,
                password_confirmation: password,
                admin: admin,
-               treasurer: treasurer
+               treasurer: treasurer,
+               testimony: testimony
                )
 end
 project = Project.create!(
