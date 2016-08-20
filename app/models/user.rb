@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :first_name, length: {minimum:3}, presence: true
   validates :last_name, length: {minimum:3}, presence: true
   validates :github, uniqueness: true
-  validates :password, length: {minimum: 6}
+  validates :password, length: {minimum: 6}, allow_blank: true
   validates :mobile_number, length: {minimum: 10}
 
   has_many :comments
