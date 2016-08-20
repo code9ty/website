@@ -26,9 +26,9 @@
                 <% if @open %>
                 <li> <a data-open='instructions'>Apply</a></li>
                 <% end %>
+                <li> <%= link_to fa_icon('users', text: "Profiles"), profiles_path%></li>
                 <li> <%= link_to fa_icon('sign-in', text: "Login"), login_path%></li>
             <% end %>
-                <li> <%#= link_to fa_icon('users', text: "Profiles"), profiles_path%></li>
             </ul>
         </div>
     </div>

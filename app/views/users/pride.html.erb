@@ -4,12 +4,12 @@
   <div class="row medium-10 columns" data-equalizer>
     <div class="small-up-1 medium-up-3">
       <% @users.each do |user| %>
-        <div class='column' data-equalizer-watch>
-          <div class='callout' >
+        <div class='column'>
+          <div class='callout'  data-equalizer-watch>
             <%= gravatar_for user %>
             <p><%= fa_icon('user', text: user.full_name) %> </p>
             <p> <%= link_to  fa_icon('github', text: user.github), user.github %> </p>
-            <p> <%= fa_icon('users') %> Awesome Akaringula </p>
+            <p> <%= fa_icon('users') %> Awesome Akaringular </p>
             <% if user.testimony %>
               <hr>
               <p class='testimony'> <%= user.testimony %></p>

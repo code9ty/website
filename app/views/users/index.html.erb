@@ -1,7 +1,8 @@
 <% if @users.any? %>
     <% @users.each do |user| %>
         <div>
-            <%= user.full_name %>
+            <%= user.full_name %> | 
+            <%= user.visible %>
         </div>
     <% end %>
 <% end %>
