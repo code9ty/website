@@ -85,6 +85,9 @@
     &:hover {
       opacity: 1;
     }
+    .centered-text{
+         @include center-text(-50%, -50%);
+    }
   }
 }
  #feedback {
