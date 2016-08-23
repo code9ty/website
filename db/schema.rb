@@ -78,13 +78,6 @@ ActiveRecord::Schema.define(version: 20160816195417) do
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "due_date"
-    t.datetime "start_date"
-  end
-
-  create_table "projects_users", id: false, force: :cascade do |t|
-    t.integer "user_id",    null: false
-    t.integer "project_id", null: false
   end
 
   create_table "users", force: :cascade do |t|
