@@ -37,14 +37,15 @@ group :production do
 end
 
 group :development do
-  gem "letter_opener"
   gem 'web-console'
+  gem 'rack-livereload'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'guard-bundler'
   gem 'guard-rails'
+  gem 'launchy'
   gem 'guard-livereload', require: false
   # gem 'quiet_assets'
 end

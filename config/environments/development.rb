@@ -51,4 +51,6 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+  # config.middleware.insert_before Rack::Lock, Rack::LiveReload
+  config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
 end
