@@ -23,7 +23,8 @@ class LinksTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", projects_path
     assert_select "a[href=?]", edit_user_comment_path(@admin)
     assert_select "a[href=?]", feedback_path
-    assert_select "a[href=?]", profiles_path
+    assert_select "a[href=?]", applicants_path
+
     
     log_in_as(@user)
     get root_path
@@ -31,7 +32,6 @@ class LinksTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", projects_path
     assert_select "a[href=?]", edit_user_comment_path(@user)
     assert_select "a[href=?]", feedback_path
-    assert_select "a[href=?]", profiles_path
   end
   
 end

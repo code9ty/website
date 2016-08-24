@@ -16,6 +16,7 @@
                     <% if current_user.admin? %>
                         <li> <%= link_to fa_icon('briefcase', text: "Dashboard"), dashboard_path %></li>
                         <li> <%= link_to fa_icon('anchor', text: "Bids"), bids_path %></li>
+                        <li> <%= link_to "Applicants",applicants_path %></li>
                     <% end %>
                     <li> <%= link_to fa_icon('folder-open', text: "Projects"), projects_path %> </li>
                     <li> <%= link_to fa_icon( 'pencil', text: "Edit Feedback"), edit_user_comment_path(current_user) %> </li>

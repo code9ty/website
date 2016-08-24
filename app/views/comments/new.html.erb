@@ -1,3 +1,4 @@
+<% provide(:title, "New comment")%>
 <div class="medium-6 medium-centered">
     <% if @comments.errors.any? %>
         <% @comments.errors.full_messages.each do |msg| %>

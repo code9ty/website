@@ -1,3 +1,4 @@
+<% provide(:title, "New comment")%>
 <%= form_for([@user, @comment]) do |f| %>
   <%= f.label :learnt %>
   <%= f.text_area :learnt, rows: 3 %>
