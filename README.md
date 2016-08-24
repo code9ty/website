@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/code9ty/website.svg?branch=master)](https://travis-ci.org/code9ty/website)
+
 # Code9ty official Website
 This is an open source website for the code90 program. It is majorly developed by Ruby on Rails and a little of HTML ,CSS ,Coffeescript & Javascript
 Feel free to contribute in it
