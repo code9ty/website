@@ -1,3 +1,4 @@
+<% provide(:title, "Signup")%>
 <div class="columns"> <h1>Register</h1> <% if @user.errors.any? %>
         <% @user.errors.full_messages.each do |msg| %>
             <li>
