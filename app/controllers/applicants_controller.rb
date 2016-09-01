@@ -1,5 +1,5 @@
 class ApplicantsController < ApplicationController
-  before_action :admin?, only: [:index, :accept]
+  before_action :admin?, except: [:create, :new, :show]
   before_action :check_intake_open, except: :accept
   def new
     @applicant = Applicant.new
@@ -31,6 +31,15 @@ class ApplicantsController < ApplicationController
     ApplicantMailer.applicant_accept(@accepts).deliver_now
     flash.now[:success] = "Good choice, an email was sent to the applicant"
     @applicants = Applicant.where(status: "accept")
+  end
+  def destroy
+    applicant = Applicant.find(params[:id])
+    if applicant.destroy
+      flash[:success] = "Applicant deleted!"
+    else
+      flash[:alert] = "There was a problem deleting the applicant"
+    end
+      redirect_to applicants_path
   end
   private
   def apply_params

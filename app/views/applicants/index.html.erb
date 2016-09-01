@@ -6,12 +6,14 @@ There are <%= pluralize(@applicants.count, "applicant") %> so far
         <th>Name</th>
         <th>Github</th>
         <th>Accept?</th>
+        <th>Delete</th>
     </tr>
     <% @applicants.each do  |geek| %>
         <tr>
             <td><%= geek.first_name %></td>
             <td><%= geek.github %></td>
             <td><%= link_to "YES",accept_path(geek: geek.id, status: "accept") %></td>
+            <td> <%= link_to 'Delete', applicant_path(geek), method: :delete, data: { confirm: "Delete #{geek.first_name}?" } %></td>
         </tr>
     <% end %>
 </table>
