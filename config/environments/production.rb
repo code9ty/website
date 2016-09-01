@@ -92,8 +92,8 @@ Rails.application.configure do
     domain: "lakehub.co.ke",
     authentication: 'login',
     enable_starttls_auto: true,
-    user_name: ENV["MANDRILL_USERNAME"],
-    password: ENV["MANDRILL_PASSWORD"],
+    user_name: ENV["MADRILL_USERNAME"],
+    password: ENV["MADRILL_PASSWORD"],
 
   }
 
