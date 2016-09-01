@@ -9,7 +9,7 @@ class ApplicantsController < ApplicationController
     @applicant = Applicant.new(apply_params)
     if @applicant.save && @open
       flash.now[:success] = "Your application has been received"
-      # ApplicantMailer.application_request(@applicant).deliver
+      ApplicantMailer.application_request(@applicant).deliver
       render 'show'
     elsif !@open
       flash[:alert] = "We are not open for now!"

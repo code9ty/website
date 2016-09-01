@@ -15,7 +15,7 @@ class UsersApplicationTest < ActionDispatch::IntegrationTest
     }
     end
     #confirm email is sent after after successful application
-    # assert_equal 1, ActionMailer::Base.deliveries.size
+    assert_equal 1, ActionMailer::Base.deliveries.size
     assert_not flash.empty?
     assert_template 'show'
 

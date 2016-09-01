@@ -87,7 +87,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: "smtp.madrillapp.com",
+    address: "smtp.mandrillapp.com",
     port: 587,
     domain: "lakehub.co.ke",
     authentication: 'login',
@@ -97,5 +97,5 @@ Rails.application.configure do
 
   }
 
-  config.action_mailer.default_url_options = { :host => 'http://code90.herokuapp.com/' }
+  config.action_mailer.default_url_options = { :host => 'http://code9ty.lakehub.co.ke/' }
 end
