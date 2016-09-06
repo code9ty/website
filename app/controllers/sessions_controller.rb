@@ -1,10 +1,12 @@
 class SessionsController < ApplicationController
+   before_action :is_logged_in
+
   def new
   end
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password]) 
-      log_in user
+      log_in user 
       remember user
       redirect_to user
       flash[:success] = "Welcome #{user.full_name}"
@@ -17,5 +19,10 @@ class SessionsController < ApplicationController
     log_out if logged_in?
     redirect_to root_url
     flash[:success] = "Successfully logged out!"
+  end
+  private
+  def is_logged_in
+    redirect_to root_url if current_user
+    flash[:alert] = "You are already logged in"
   end
 end
