@@ -1,9 +1,10 @@
-<h1>You made it!!</h1>
+<p>Hi <%= @applicant.first_name %></p>
+<p>Lets meet on Monday 12th Sept at exactly 0800hrs at LakeHub.
+Please carry your <strong>working</strong> laptop with you. </p>
+<p>By the way, that sms you recieved was sent together with this email through the
+#code9ty website. Whats more cool is that sending sms is part of our curriculum and emails too, coool, right? ;-) </p>
 
 
-<p>
-Congratulations <%= @applicant.first_name %>,</p>
- You were accepted to code9ty cohort B application.</p>
- <p>Click on the link below to create your account</p>
-  <%= link_to "Sign Up", signup_url(email: @applicant.email) %>
-</p>
+<small>Sending this email was made possible, coded and designed by <%= link_to 'StellaMaris', 'https://github.com/stlmaris123' %>, a member of cohort A of <strong>#code9ty</strong></small>
+<p><b>Cheers!!</b></p>
+<p>Sigu Magwa</p>
