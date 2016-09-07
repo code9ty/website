@@ -14,7 +14,7 @@ class LinksTest < ActionDispatch::IntegrationTest
 
   end
 
-  test "links if admin or member" do
+  test "links if admin " do
     log_in_as(@admin)
     get root_path
     assert_select "a[href=?]", login_path, count: 0
@@ -24,8 +24,8 @@ class LinksTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", edit_user_comment_path(@admin)
     assert_select "a[href=?]", feedback_path
     assert_select "a[href=?]", applicants_path
-
-    
+end
+  test "links if user"  do
     log_in_as(@user)
     get root_path
     assert_select "a[href=?]", login_path, count: 0
