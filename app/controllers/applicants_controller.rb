@@ -27,6 +27,12 @@ class ApplicantsController < ApplicationController
   end
   def accept
     @accepts = Applicant.find(params[:geek])
+    @accepts.send_sms("Hi #{@accepts.first_name}, Kindly come to LakeHub on Monday 12th Sept at 0800hrs. Check email for more info
+  Regards,
+  Sigu Magwa,
+  coodinator,
+  #code9ty"
+    )
     @accepts.update_attributes(status: "accept")
     ApplicantMailer.applicant_accept(@accepts).deliver_now
     flash.now[:success] = "Good choice, an email was sent to the applicant"
