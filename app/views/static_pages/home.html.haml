@@ -119,21 +119,22 @@
         %button{"data-slide" => "6"}
           %span.show-for-sr Second slide details.
 
-= render 'static_pages/application_reveal' if @open
-#instructions.reveal.small{'data-reveal' => '', 'data-animation-in' => 'scale-in-up', 'data-animation-out' => 'hinge-out-from-top'}
-  %p
-    Please read the prerequisites of this program then proceed to apply
-  %p
-    In brief these are some of the things you need to know
-  %ul
-    %li You should be available everyday from 12th Sept till 10 December, from 8am till 5pm
-    %li You should have a working laptop
-    %li You DO NOT need prior knowledge in programming to be considered. Come on! We will make you the GURU
-  %p
-    Please note that for this cohort we are charging a facilication fee of Ksh. 6,000.00. However on the reporting
-    day you must have Ksh. 3,000.00. The rest can be completed within the first 4 weeks.
-  %button.button{'data-open' => 'apply_reveal'}
-    proceed and apply
+- if @open
+  = render 'static_pages/application_reveal'
+  #instructions.reveal.small{'data-reveal' => '', 'data-animation-in' => 'scale-in-up', 'data-animation-out' => 'hinge-out-from-top'}
+    %p
+      Please read the prerequisites of this program then proceed to apply
+    %p
+      In brief these are some of the things you need to know
+    %ul
+      %li You should be available everyday from 12th Sept till 10 December, from 8am till 5pm
+      %li You should have a working laptop
+      %li You DO NOT need prior knowledge in programming to be considered. Come on! We will make you the GURU
+    %p
+      Please note that for this cohort we are charging a facilication fee of Ksh. 6,000.00. However on the reporting
+      day you must have Ksh. 3,000.00. The rest can be completed within the first 4 weeks.
+    %button.button{'data-open' => 'apply_reveal'}
+      proceed and apply
 %footer#footer
   This website was developed by the first #Code9ty cohort </br>
   %small
