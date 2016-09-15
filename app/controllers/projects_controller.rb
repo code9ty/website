@@ -15,6 +15,7 @@ class ProjectsController < ApplicationController
         format.js{}
         format.html{
           flash[:success] = "Project successfully created!"
+          UserMailer.new_project(@user).deliver
           redirect_to projects_path
         }
       end
