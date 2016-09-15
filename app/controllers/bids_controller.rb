@@ -31,6 +31,8 @@ class BidsController < ApplicationController
    due_date = Time.zone.now + params[:days].to_i.days
    if bid.update_attributes(status: "assigned", due_date: due_date, start_date: Time.zone.now)
      flash[:success] = "#{bid.user.full_name} has been successfully assigned this project"
+     @user = User.find(bid.user_id)
+     UserMailer.project_approval(@user).deliver
    else
      flash[:alert] = "There was a problem assigning the project"
    end
