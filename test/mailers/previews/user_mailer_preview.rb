@@ -4,4 +4,9 @@ def new_project
   user = User.first
   UserMailer.new_project(user)
 end
+
+def project_approval
+  user = User.first
+  UserMailer.project_approval(user)
+end
 end
