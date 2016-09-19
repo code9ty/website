@@ -12,7 +12,7 @@ class LoginTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
   end
 
-  test "user login in" do
+  test "user login in followed by logout" do
     get login_path
     assert_template "sessions/new"
     assert flash.empty?
@@ -25,6 +25,10 @@ class LoginTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     assert_equal flash[:success], "Welcome #{@user.full_name}"
     assert_redirected_to @user
+
+    delete logout_path
+    assert_redirected_to root_url
+    assert_equal flash[:success], "Successfully logged out!"
     
   end
 
