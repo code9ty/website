@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, except: [:pride]
+  before_action :logged_in_user, except: [:pride,:new, :create]
   before_action :correct_user, only:[:show, :update, :edit]
   def index
     @users = User.all
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       applicant = Applicant.find_by_email(params[:email])
       if applicant.accept?
         @user = applicant
-        @disabled = true
+        @readonly = true
       else
         redirect_to apply_path
         flash[:alert] = "Please apply here!"
@@ -30,6 +30,7 @@ class UsersController < ApplicationController
         log_in @user
         redirect_to @user
       else
+        @readonly = true
         render 'new'
       end
     end
