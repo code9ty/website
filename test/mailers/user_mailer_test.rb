@@ -20,4 +20,14 @@ class UserMailerTest < ActionMailer::TestCase
     assert_match user.first_name,               mail.body.encoded
     assert_match CGI::escape(user.first_name), mail.body.encoded
   end
+
+  test "new_approval" do
+    user = users(:majaribu)
+    mail = UserMailer.new_assignment user
+    assert_equal "New Assignment", mail.subject
+    assert_equal [user.email], mail.to
+    assert_equal ["code9ty@lakehub.co.ke"], mail.from
+    assert_match user.first_name,               mail.body.encoded
+    assert_match CGI::escape(user.first_name), mail.body.encoded
+  end
 end
