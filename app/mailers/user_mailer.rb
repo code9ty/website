@@ -9,8 +9,9 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: "Project Approved"
   end
 
-  def new_assignment(user)
+  def new_assignment(user, assignment)
     @user = user
-    mail to: user.email, subject: "New Assignment"
+    @assignment = assignment
+    mail to: user.email, subject: "New Assignment - #{@assignment.title}"
   end
 end

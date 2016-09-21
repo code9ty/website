@@ -23,8 +23,9 @@ class UserMailerTest < ActionMailer::TestCase
 
   test "new_approval" do
     user = users(:majaribu)
-    mail = UserMailer.new_assignment user
-    assert_equal "New Assignment", mail.subject
+    assignment = assignments(:one)
+    mail = UserMailer.new_assignment(user, assignment)
+    assert_equal "New Assignment - #{assignment.title}", mail.subject
     assert_equal [user.email], mail.to
     assert_equal ["code9ty@lakehub.co.ke"], mail.from
     assert_match user.first_name,               mail.body.encoded

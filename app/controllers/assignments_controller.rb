@@ -11,7 +11,7 @@ class AssignmentsController < ApplicationController
       redirect_to new_assignment_path
       flash[:success] = "Assignment created"
       User.find_each do |user|
-        UserMailer.new_assignment(user).deliver
+        UserMailer.new_assignment(user, @assignment).deliver
       end
     else
       render 'new'

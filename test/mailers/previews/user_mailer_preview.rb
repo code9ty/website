@@ -12,6 +12,7 @@ class UserMailerPreview < ActionMailer::Preview
 
   def new_assignment
     user = User.first
-    UserMailer.new_assignment(user)
+    assignment = Assignment.first
+    UserMailer.new_assignment(user, assignment)
   end
 end

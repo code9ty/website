@@ -1,6 +1,12 @@
 <p>Hi <%= @user.first_name %></p>
 <p>I have given you an assignment based on what we have been learning.
-Do them and understand</p>
+Do them and understand.</p>
+
+<p><strong>Assignment:</strong> <%= @assignment.title %></p>
+<p><strong>Description:</strong> <%= @assignment.description %></p>
+
+<p><strong>Due date: </strong><%=@assignment.due_date.strftime("%A, %d %B at %H:%M")%></p>
+
 <p>Remember, its through practice that we get better at everything</p>
 
 <p><b>Regards,</b></p>
