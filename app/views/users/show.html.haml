@@ -1,6 +1,6 @@
 - content_for(:title, "#{@user.full_name} Feedback Page")
 .medium-4.columns.hide-for-small-only
-  - unless @bids.last.start_date == nil
+  - unless @bids and @bids.last.start_date == nil
     .callout
       = debug @bids
       %h4
