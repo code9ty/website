@@ -1,4 +1,4 @@
-user = User.create!(
+admin = User.create!(
  first_name: "Mak",
  last_name: "Atunga",
  university: "Makatunga University",
@@ -10,6 +10,19 @@ user = User.create!(
  password_confirmation: "cartoon",
  treasurer: false,
  admin: true
+)
+user = User.create!(
+ first_name: "John",
+ last_name: "Doe",
+ university: "Makatunga University",
+ year_of_study: "3",
+ github: "https://github.com/JohnDoe",
+ mobile_number: "0712345678",
+ email: "user@example.com",
+ password: "cartoon",
+ password_confirmation: "cartoon",
+ treasurer: false,
+ admin: false
 )
 3.times do
    first_name= Faker::Name.first_name
@@ -40,16 +53,16 @@ end
 project = Project.create!(
   title: "Test Project",
   link: Faker::Internet.url,
-  # due_date: 2.days.from_now,
-  # start_date: 10.days.ago
+  due_date: 2.days.from_now,
+  start_date: 10.days.ago
 )
-user.projects = [project]
+# admin.projects = [project]
 5.times do
   title = Faker::Commerce.product_name
   link = Faker::Internet.url
-  # due_date = Faker::Date.between(Date.today, 28.days.from_now)
-  # start_date = Faker::Date.between(4.days.ago, Time.zone.now)
-  Project.create!(title: title, link: link)
+  due_date = Faker::Date.between(Date.today, 28.days.from_now)
+  start_date = Faker::Date.between(4.days.ago, Time.zone.now)
+  Project.create!(title: title, link: link, due_date: due_date, start_date: start_date)
 end
 # 5 times user ids
 1.upto(4) do |n|
@@ -71,8 +84,8 @@ end
 
 # assign users 2 projects each
 2.times do
-  # project = Project.find(rand(1..5))
-  # user.projects << project
+  project = Project.find(rand(1..5))
+  # admin.projects << project
   2.upto 4 do |n|
     # get a random user from the database
     random_user = User.find(n)
@@ -80,6 +93,8 @@ end
     random_user.projects << random_project unless random_user.projects.include? random_project
   end
 end
+
+#assign user two projects
 
 #seed assignments for the users
 3.times do
