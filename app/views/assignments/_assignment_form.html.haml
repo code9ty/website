@@ -1,4 +1,4 @@
-= form_for @assignment do |f|
+= form_for(assignment) do |f|
   .medium-12.columns
     = f.text_field :title, placeholder: 'Project Title'
   .medium-12.columns
@@ -8,9 +8,10 @@
   .medium-12.columns
     .callout.medium-5.columns
       = f.label :start_date, 'Start Date'
-      = f.date_select :start_date
+      = f.datetime_select :start_date, default: Time.zone.now
     .callout.medium-5.columns
       = f.label :due_date, 'Due Date'
-      = f.date_select :due_date
+      .medium-6.columns
+      = f.datetime_select :due_date
   .medium-12.columns
     = f.submit 'Create Assignment', class: 'button'

@@ -1,0 +1,6 @@
+<% @assignments.each do |assignment| %>
+  <%= assignment.title %>
+  <%= assignment.title %>
+  <%= link_to 'edit', edit_assignment_path(assignment) %>
+  <br>
+  <% end %>

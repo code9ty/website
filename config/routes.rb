@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :applicants, except: [:edit, :update]
   resources :bids
   resources :projects
-  resources :assignments, only: [:index, :new, :create]
+  resources :assignments, only: [:index,:edit, :new, :create, :update]
   resources :users, except: [:new] do
     resources :comments, except: [:index]
   end

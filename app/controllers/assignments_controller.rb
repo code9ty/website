@@ -1,6 +1,23 @@
 class AssignmentsController < ApplicationController
   before_action :admin?
   before_action :logged_in_user
+  def index
+    @assignments = Assignment.all
+  end
+
+  def edit
+    @assignment = Assignment.find(params[:id])
+  end
+
+  def update
+    @assignment = Assignment.find(params[:id])
+    if @assignment.update_attributes(assignment_params)
+      redirect_to assignments_path
+      flash[:success] = 'Successfully updated assignment'
+    else
+      render 'new'
+    end
+  end
   def new
     @assignment = Assignment.new
   end
