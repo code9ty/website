@@ -24,6 +24,7 @@ group :development, :test do
   gem 'guard'
   gem 'guard-minitest'
   gem 'byebug', platform: :mri
+  gem 'railroady'
 end
 
 group :test do
