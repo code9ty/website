@@ -31,6 +31,7 @@ group :test do
   gem 'minitest-rails-capybara'
   gem 'minitest-reporters'
   gem 'selenium-webdriver'
+  gem 'simplecov', :require => false
 end
 
 group :production do
