@@ -1,64 +1,140 @@
 <% provide(:title, "What we learn")%>
-<div class="row" id="top_row" align="center">
-    <div class="medium-4 columns">
-        <p> 
-        <%= image_tag 'ruby.png', width: 80, height: 80 %><br>
+<div id='what_we_do'>
+    <div class="row small-up-1 medium-up-3" >
+        <div class="column">
+            <%= image_tag 'outline/browser.png', size: '64x64'%>
+            <h2>Week One</h2>
+            <h3>Introduction to object oriented programming</h3>
+            <p>
+            This module assumes little or no knowledge on programming in any
+            language, you are introduced to the world of programming using using
+            the object oriented paradigm. To be covered is the basics of oop
+            </p>
+        </div>
 
-        Ruby is a dynamic, open source programming language 
-        with a focus simplicity and productivity.
-        It has an elegant syntax that is natural to read and easy to write.
-        <%= link_to "Learn more", "https://github.com/code9ty/what_we_do/blob/master/ruby.md" %> </p>
+        <div class="column">
+            <%= image_tag 'outline/coding.png', size: '64x64'%>
+            <h2>Week Two</h2>
+            <h3>Advanced object oriented programming</h3>
+            <p>
+            By this week you are able to understand advanced concepts of object
+            oriented programming. We use ruby as a our choice to show case the
+            more advanced features
+            </p>
+        </div>
+
+        <div class="column">
+            <%= image_tag 'outline/renting.png', size: '64x64'%>
+            <h2>Week Three</h2>
+            <h3>Introduction to test driven development</h3>
+            <p>
+            Every code written must be tested even if it is being done manually.
+            We encourage writing automated tests during software development, so
+            we introduce it this early in the bootcamp. We use minitest and
+            rspec for doing tests in ruby
+            </p>
+        </div>
+
+        <div class ="column">
+            <%= image_tag 'outline/mozilla.png', size: '64x64'%>
+            <h2>Week Four</h2>
+            <h3>Introduction to the web</h3>
+            <p>
+            How does the web really work? How do communication happen between
+            computers?
+            We will also introduce html, css and responsive design
+            </p>
+        </div>
+
+        <div class="column">
+            <%= image_tag 'outline/javascript.png', size: '64x64'%>
+            <h2>Week Five</h2>
+            <h3>Javascript and front end frameworks</h3>
+            <p>
+            Javascript is core to the web world, we take a week to have a look
+            at its beauty and use a front end framework to show its power. This
+            will be ember.js and angular.js
+            </p>
+        </div>
+
+        <div class='column'>
+            <%= image_tag 'outline/server.png', size: '64x64'%>
+            <h2>Week Six</h2>
+            <h3>Working with databases and storing data</h3>
+            <p>
+            Some data needs to be stored permanently, we do sql and nosql based
+            databases during this module. Sinatra is introduced to consolidate
+            all the previous 5 modules
+            </p>
+        </div>
+
+        <div class='column'>
+            <%= image_tag 'outline/bulldozer.png', size: '64x64'%>
+            <h2>Week Seven</h2>
+            <h3>Project 1 </h3>
+            <p>
+            This project covers all the technologies learnt to this point.
+            </p>
+        </div>
+
+        <div class="column">
+            <%= image_tag 'outline/computer.png', size: '64x64'%>
+            <h2>Week Eight</h2>
+            <h3>Introduction to software as a service</h3>
+            <p>
+            We learn how to design and implement centrally hosted software.
+            Ruby on Rails will be used as a classic example of this. Software
+            documentation and agile development is also covered.
+            </p>
+        </div>
+
+        <div class = "column">
+            <%= image_tag 'outline/configuration.png', size: '64x64'%>
+            <h2>Week Nine</h2>
+            <h3>Advanced Software as a service concepts</h3>
+            <p>
+            Advancing our knowledge in week eight, we cover design patterns for
+            saas classes, perfomance, releases reliability and security of our
+            app
+            </p>
+        </div>
+
+
+        <div class = "column">
+            <%= image_tag 'outline/people.png', size: '64x64'%>
+            <h2>Week ten</h2>
+            <h3>Project 2: Pair programing and collaboration concepts</h3>
+            <p>
+            Second project to strengthen the ability to pair program and
+            enhance collaboration skills. Project involves all that has been
+            learnt so far, advanced git concepts for collaboration and
+            collaboration tools like waffle, pivotal tracker etc.
+            </p>
+        </div>
+
+
+        <div class = "column">
+            <%= image_tag 'outline/cone.png', size: '64x64'%>
+            <h2>Week eleven and twelve</h2>
+            <h3>Project 3: Final Project</h3>
+            <p>
+            Projects done as individual. The first saas app created employing
+            all the concepts learnt so far in the modules.
+            </p>
+        </div>
+
+
+        <div class = "column">
+            <%= image_tag 'outline/computer-1.png', size: '64x64'%>
+            <h2>Week thirteen</h2>
+            <h3>Working on legacy code and opensource projects</h3>
+            <p>
+            Not every code you will be able to write from scratch or document
+            so well. We show you how to approach legacy code. We join an online
+            community of existing open source projects where you take part in
+            real world projects
+            </p>
+        </div>
     </div>
-    <div class="medium-4 columns">
-        <p>
-        <%= image_tag 'github.png', width: 80, height: 80 %>
-        <br>
-        Git is a free and open source distributed version control system designed to handle everything
-        from small to very large projects with speed and efficiency
-        <%= link_to "Learn more", "https://github.com/code9ty/what_we_do/blob/master/git.md"%> </p>
 
-    </div>
-
-    <div class="medium-4 columns">
-        <p>
-        <%= image_tag 'jquery.png', width: 80, height: 80 %>
-        <br>
-        jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML.
-        jQuery is the most popular JavaScript library in use today.
-        <%= link_to "Learn more", "https://github.com/code9ty/what_we_do/blob/master/jquery.md"%> </p>
-
-    </div>
 </div>
-<div class="row" align="center"> 
-    <div class ="medium-4 columns">
-        <p>
-        <%= image_tag 'frame.png', width: 80, height: 80 %>
-        <br>
-        A web framework or web application framework is a software framework that is designed to
-        support the development of web applications including web services, web resources and web APIs.
-        Web frameworks aim to alleviate the overhead associated with common activities performed in web development.
-        <%= link_to "Learn more", "https://github.com/code9ty/what_we_do/blob/master/frame_works.md" %> </p>
-
-    </div>
-    <div class="medium-4 columns">
-        <p>
-        <%= image_tag 'vim.png', width: 80, height: 80 %>
-        <br>
-        Vim is an advanced text editor that seeks to provide the power of the de-facto Unix editor
-        'Vi', with a more complete feature set.
-        It's useful whether you're already using vi or using a different editor.
-        <%= link_to "Learn more", "https://github.com/code9ty/what_we_do/blob/master/vim.md" %> </p>
-
-    </div>
-    <div class"medium-4 columns">
-        <p>
-        <%= image_tag 'rails.png', width: 100, height: 80 %>
-        <br>
-        Ruby on Rails is a full-stack web framework optimized for programmer happiness and sustainable productivity.
-        It encourages beautiful code by favoring convention over configuration.
-        <%= link_to "Learn more", "https://github.com/code9ty/what_we_do/blob/master/rails.md" %> </p>
-
-    </div>
-
-</div>
-

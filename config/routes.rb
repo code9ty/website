@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   get 'home' => 'static_pages#home'
-  get 'what' => 'static_pages#what'
+  get 'what_we_learn' => 'static_pages#what'
   root 'static_pages#home'
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
