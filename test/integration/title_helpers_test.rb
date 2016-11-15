@@ -14,7 +14,7 @@ class TitleHelpersTest < ActionDispatch::IntegrationTest
   end
 
   test "title when on what we learn page" do
-    get what_path
+    get what_we_learn_path
     assert_response :success
     assert_select "title", "What we learn | #{@common_title}"
   end
