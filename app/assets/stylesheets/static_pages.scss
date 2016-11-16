@@ -117,7 +117,7 @@
  #what_we_do {
      text-align: center;
      padding-top: 2em;
-     padding-bottom: 2em;
+     // padding-bottom: 2em;
      h2 {
          margin-top: 0.4em;
          margin-bottom: 0;
@@ -130,6 +130,17 @@
      }
      p {
          text-align: justify;
+     }
+     hr {
+         margin-right: 20%;
+         margin-left: 20%;
+     }
+     #note {
+         text-align: center;
+         background-color: #2C3840;
+         padding-top: 34px;
+         height: 100px;
+         color: white;
      }
 
  }
