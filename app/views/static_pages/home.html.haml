@@ -1,12 +1,12 @@
-- provide(:title, "Home")
+- provide(:title, "Coding Bootcamp")
 #intro
   .page_centered
     %h1
       \ #code9ty
     %a{data: { open:'video_reveal' }}
       = image_tag('play.png')
-    %p
-      Rock On Rails!
+    %h2
+      Coding Bootcamp
     %button.button.success.shadowed{'data-open' => 'instructions'}
       - if @open
         Apply Now!
@@ -16,7 +16,7 @@
   .row
     .medium-4.columns
       = fa_icon('code')
-      %h3 Learn code
+      %h3 Learn to code
       %p Are you interested in coding ? Then you are in the right place.
       Code9ty provides a platform to learn how to build interactive web applications.
       It is fun and interactive ninety days of hands on skills. Don't believe us?

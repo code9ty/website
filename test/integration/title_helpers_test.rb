@@ -2,7 +2,7 @@ require 'test_helper'
 
 class TitleHelpersTest < ActionDispatch::IntegrationTest
   def setup
-    @common_title = "#Code9ty"
+    @common_title = "Code9ty"
     @user = users(:majaribu)
     @user2 = users(:yulemzi)
   end
@@ -10,13 +10,13 @@ class TitleHelpersTest < ActionDispatch::IntegrationTest
   test "home title" do
     get root_path
     assert_response :success
-    assert_select "title", "Home | #{@common_title}"
+    assert_select "title", "Coding Bootcamp | #{@common_title}"
   end
 
   test "title when on what we learn page" do
-    get what_we_learn_path
+    get learn_to_code_path
     assert_response :success
-    assert_select "title", "What we learn | #{@common_title}"
+    assert_select "title", "Learn to code | #{@common_title}"
   end
 
   test "title when on login page" do

@@ -23,7 +23,7 @@
                     <li> <%= link_to fa_icon( 'arrow-down', text: "Feedback"), feedback_path%>
                     <li> <%= link_to fa_icon('power-off', text: "logout"), logout_path, method: :delete %></li>
             <% else %>
-                <li> <%= link_to 'What we learn', what_we_learn_path %></li>
+                <li> <%= link_to 'What we learn', learn_to_code_path %></li>
                 <% if @open %>
                 <li> <a data-open='instructions'>Apply</a></li>
                 <% end %>
