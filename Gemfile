@@ -17,6 +17,7 @@ gem 'haml'
 gem 'compass-rails'
 gem 'roadie'
 gem 'roadie-rails'
+gem 'meta-tags'
 
 group :development, :test do
   gem 'rails-controller-testing'

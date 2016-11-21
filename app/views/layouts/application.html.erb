@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title><%= content_for?(:title) ? yield(:title) : "" %> | Code9ty</title>
+    <%= display_meta_tags  %>
 
     <%= stylesheet_link_tag    "application", media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "application", 'data-turbolinks-track' => 'reload' %>
@@ -19,7 +20,6 @@
             ga('create', 'UA-87593413-1', 'auto');
                     </script>
     <% end %>
-  </head>
   </head>
 
   <body>
