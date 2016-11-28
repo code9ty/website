@@ -1,17 +1,19 @@
 <% provide(:title, "Apply")%>
 <% set_meta_tags description: "Apply to join code9ty for the best learning 
 experience. We make it fun :-) "  %>
-<div class='medium-8 medium-centered columns'>
-  <h1>Apply here!!!!</h1>
-  <% if @applicant.errors.any? %>
-    <% @applicant.errors.full_messages.each do |msg| %>
-      <ul>
-        <li>
-          <%= msg %>
-        </li>
-      </ul>
+<div class='row'>
+  <div class='medium-8 medium-centered columns'>
+    <h1>Apply here</h1>
+    <% if @applicant.errors.any? %>
+      <% @applicant.errors.full_messages.each do |msg| %>
+        <ul>
+          <li>
+            <%= msg %>
+          </li>
+        </ul>
+      <% end %>
     <% end %>
-  <% end %>
 
-  <%= render "application_form" %>
+    <%= render "application_form" %>
+  </div>
 </div>

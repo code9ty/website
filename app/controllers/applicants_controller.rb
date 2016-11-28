@@ -8,14 +8,14 @@ class ApplicantsController < ApplicationController
   def create
     @applicant = Applicant.new(apply_params)
     if @applicant.save && @open
-      flash.now[:success] = "Your application has been received"
+      flash.now[:success] = "Your application has been received."
       ApplicantMailer.application_request(@applicant).deliver
       render 'show'
     elsif !@open
       flash[:alert] = "We are not open for now!"
       redirect_to root_url
     else
-      flash.now[:alert] = "Error saving form"
+      flash.now[:alert] = "You filled in something we didn't understand"
       render 'new'
     end
   end

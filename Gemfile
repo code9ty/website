@@ -15,20 +15,22 @@ gem 'bcrypt', '~> 3.1.7'
 gem "binding_of_caller"
 gem 'haml'
 gem 'compass-rails'
-gem 'roadie'
-gem 'roadie-rails'
 gem 'meta-tags'
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
   gem 'rails-controller-testing'
   gem 'sqlite3'
   gem 'guard'
   gem 'guard-minitest'
   gem 'byebug', platform: :mri
   gem 'railroady'
+  gem 'factory_girl_rails'
 end
 
 group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
   gem 'minitest-rails-capybara'
   gem 'minitest-reporters'
   gem 'selenium-webdriver'
@@ -48,7 +50,7 @@ group :development do
   gem 'better_errors'
   gem 'guard-bundler'
   gem 'guard-rails'
+   gem 'guard-rspec', require: false
   gem 'launchy'
   gem 'guard-livereload', require: false
-  # gem 'quiet_assets'
 end
