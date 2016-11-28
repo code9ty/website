@@ -2,3 +2,5 @@ language: ruby
 script:
   - bin/rails db:migrate RAILS_ENV=test
   - bundle exec rails test
+  - bundle exec cucumber
+  - bundle exec rspec
