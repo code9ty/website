@@ -1,18 +1,33 @@
-<div class="row" id="mail">
-    <div class="medium-6 columns medium-offset-3">
-        <h1>#CODE9TY APPLICATION RECEIVED</h1>
+<h1>CODE9TY APPLICATION RECEIVED</h1>
 
-        <p> Hey <%= @applicant.first_name %>, </p>
-        <p>Thank you for showing interest in #code9ty. This is where you learn code, love it and live it</p>
-        <p>All successful applicants will be contacted by the first week of September</p>
-        <p>Meanwhile, checkout <%= link_to "what we cover", learn_to_code_url %> to learn more about the program</p>
+<p> Hey <%= @applicant.first_name %>, </p>
+<p>Thank you for showing interest in code9ty. This is where you learn code, love it and live it</p>
+<p>You will be contacted through sms and email for an interview.</p>
+<p>Meanwhile, checkout <%= link_to "what we cover", learn_to_code_url %>
+to learn more about what we will go through</p>
 
-        <p>All successful applicants will pay a subsidised facilitation fee of Kshs. 6,000.00.
-        However, only Ksh. 3,000.00 will be required on the start date and the rest of the payment within
-        the first 4 weeks</p>
+<p>
+All successful applicants will pay a subsidised facilitation fee of Kshs. 30,000.00.
+However, only Ksh. 20,000.00 will be required on the start date and the rest of the payment within
+the first 4 weeks
+</p>
 
-        <small>Sending this email was made possible, coded and designed by <%= link_to 'StellaMaris', 'https://github.com/stlmaris123' %>, a member of cohort A of <strong>#code9ty</strong></small>
-        <p><b>Cheers!!</b></p>
-        <p>Sigu Magwa</p>
-    </div>
-</div>
+<strong>Stundent?</strong>
+<p>
+If you are a student you will enjoy a discount of <strong>66%</strong> off this. You will pay
+a total of Kshs. 10,000.00. This amount is payed once you are confirmed.
+</p>
+
+<p>
+<strong>Fun fact:</strong> The sms you just received, we will show you how its done too :-). Thats
+awesome, right?
+</p>
+<small>
+  Sending this email was made possible, coded and designed by
+  <%= link_to 'StellaMaris', 'https://github.com/stlmaris123' %>,
+  a member of cohort A of <strong>code9ty</strong>
+</small>
+<p><b>Cheers!!</b></p>
+<p>Sigu Magwa</p>
+
+

@@ -10,6 +10,8 @@ class ApplicantsController < ApplicationController
     if @applicant.save && @open
       flash.now[:success] = "Your application has been received."
       ApplicantMailer.application_request(@applicant).deliver
+      text = "Thanks #{@applicant.first_name} for your interest in code9ty. We have received your application.\n\nRegards,\nSigu Magwa\nCoordinator - code9ty "
+      @applicant.send_sms text
       render 'show'
     elsif !@open
       flash[:alert] = "We are not open for now!"
@@ -19,12 +21,15 @@ class ApplicantsController < ApplicationController
       render 'new'
     end
   end
+
   def show
     @applicant = Applicant.find(params[:id])
   end
+
   def index
     @applicants = Applicant.where(status: "apply")
   end
+
   def accept
     @accepts = Applicant.find(params[:geek])
     @accepts.send_sms("Hi #{@accepts.first_name}, Kindly come to LakeHub on Monday 12th Sept at 0800hrs. Check email for more info
@@ -38,6 +43,7 @@ class ApplicantsController < ApplicationController
     flash.now[:success] = "Good choice, an email was sent to the applicant"
     @applicants = Applicant.where(status: "accept")
   end
+
   def destroy
     applicant = Applicant.find(params[:id])
     if applicant.destroy
@@ -47,7 +53,9 @@ class ApplicantsController < ApplicationController
     end
       redirect_to applicants_path
   end
+
   private
+
   def apply_params
     params.require(:applicant).permit(:first_name, :last_name, :mobile_number, :email, :github)
   end

@@ -13,5 +13,6 @@ module Feedback
     # -- all .rb files in that directory are automatically loaded.
     config.autoload_paths += %W(#{config.root}/lib)
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
+    config.action_mailer.preview_path = 'test/mailers/previews'
   end
 end
