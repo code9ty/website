@@ -2,16 +2,17 @@
 #intro
   .page_centered
     %h1
-      \ #code9ty
+      \ code9ty
     %a{data: { open:'video_reveal' }}
       = image_tag('play.png')
     %h2
       Coding Bootcamp
-    = button_to 'Apply Now', apply_path, method: :get, class: 'button success shadowed'
+    - if @open
+      = link_to 'Apply Now', apply_path, method: :get, class: 'button success shadowed'
+    - else
+      = link_to "Application starts #{next_intake_date}", '#', method: :get, class: 'button success shadowed'
     -# %button.button.success.shadowed{'data-open' => 'instructions'}
-    -#   - if @open
     -#     Apply Now!
-    -#   - else
     -#     Application starts #{next_intake_date}
 #we_are
   .row

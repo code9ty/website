@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   post 'apply' =>  'applicants#create'
   get 'accept' => 'applicants#accept'
   get 'profiles' =>'users#pride'
-  resources :applicants, except: [:edit, :update]
+  resources :applicants, except: [:edit, :update, :new, :create]
   resources :bids
   resources :projects
   resources :assignments, only: [:index,:edit, :new, :create, :update]

@@ -25,7 +25,7 @@
             <% else %>
                 <li> <%= link_to 'What we learn', learn_to_code_path %></li>
                 <% if @open %>
-                <li> <a data-open='instructions'>Apply</a></li>
+                  <li> <%= link_to 'Apply', apply_path %></li>
                 <% end %>
                 <li> <%= link_to fa_icon('users', text: "Profiles"), profiles_path%></li>
                 <li> <%= link_to fa_icon('sign-in', text: "Login"), login_path%></li>
