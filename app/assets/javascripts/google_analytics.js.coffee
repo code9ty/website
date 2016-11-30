@@ -1,4 +1,3 @@
-s file into your assets/javascripts/ folder and assure
 # it gets loaded by checking or editing your assets/javascripts/application.js
 # # file as appropriate
 
