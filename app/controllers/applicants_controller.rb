@@ -3,6 +3,11 @@ class ApplicantsController < ApplicationController
   before_action :check_intake_open, except: :accept
   def new
     @applicant = Applicant.new
+    set_meta_tags og: {
+      image:'https://s3-us-west-2.amazonaws.com/code9ty/learn.jpg',
+      url: apply_url,
+      type: 'website'
+    }
   end
 
   def create
