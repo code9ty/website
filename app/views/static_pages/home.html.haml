@@ -18,10 +18,10 @@
       = fa_icon('code')
       %h3 Learn to code
       %p Are you interested in coding ? Then you are in the right place.
-      Code9ty provides a platform to learn how to build interactive web applications 
+      Code9ty provides a platform to learn how to build interactive web applications
       in our coding bootcamp.
       It is fun and interactive ninety days of hands on skills. Don't believe us?
-      Check the photos below: 
+      Check the photos below:
     .medium-4.columns
       = fa_icon('code-fork')
       %h3 Why 90
@@ -135,7 +135,12 @@
     %button.button{'data-open' => 'apply_reveal'}
       proceed and apply
 %footer#footer
-  This website was developed by the first #Code9ty cohort </br>
+  = link_to fa_icon('facebook'), 'http://www.facebook.com/code9ty'
+  = link_to fa_icon('twitter'), 'http://www.twitter.com/code9ty'
+  = link_to fa_icon('linkedin'), 'https://www.linkedin.com/company/code9ty'
+  %p
+    This website was developed by the first code9ty cohort
   %small
-    check it out #{link_to 'here', 'https://github.com/code9ty/website'} on github </br>
-  &copy; Code9ty 2016 </br>
+    %p
+      check it out #{link_to 'here', 'https://github.com/code9ty/website'} on github
+  &copy; code9ty #{Date.today.year} </br>

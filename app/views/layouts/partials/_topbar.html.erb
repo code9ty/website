@@ -23,12 +23,13 @@
                     <li> <%= link_to fa_icon( 'arrow-down', text: "Feedback"), feedback_path%>
                     <li> <%= link_to fa_icon('power-off', text: "logout"), logout_path, method: :delete %></li>
             <% else %>
+                <li> <%= link_to 'Blog', 'https://medium.com/code9ty' %></li>
                 <li> <%= link_to 'What we learn', learn_to_code_path %></li>
                 <% if @open %>
                   <li> <a data-open='instructions'>Apply</a></li>
                 <% end %>
                 <li> <%= link_to fa_icon('users', text: "Profiles"), profiles_path%></li>
-                <li> <%= link_to fa_icon('sign-in', text: "Login"), login_path%></li>
+                <li> <%#= link_to fa_icon('sign-in', text: "Login"), login_path%></li>
             <% end %>
             </ul>
         </div>
