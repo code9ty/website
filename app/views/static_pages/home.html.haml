@@ -7,7 +7,7 @@
       Coding Bootcamp
     %p
       supported by:
-    = image_tag('ca_logo.png', class: 'logo')
+    = link_to image_tag('ca_logo.png', class: 'logo'), 'http://craftacademy.se/english', target: 'blank'
     %p
       Teaching everybody how to code
     %br
@@ -139,9 +139,9 @@
     %button.button{'data-open' => 'apply_reveal'}
       proceed and apply
 %footer#footer
-  = link_to fa_icon('facebook'), 'http://www.facebook.com/code9ty'
-  = link_to fa_icon('twitter'), 'http://www.twitter.com/code9ty'
-  = link_to fa_icon('linkedin'), 'https://www.linkedin.com/company/code9ty'
+  = link_to fa_icon('facebook'), 'http://www.facebook.com/code9ty', target: 'blank'
+  = link_to fa_icon('twitter'), 'http://www.twitter.com/code9ty', target: 'blank'
+  = link_to fa_icon('linkedin'), 'https://www.linkedin.com/company/code9ty', target: 'blank'
   %p
     This website was developed by the first code9ty cohort
   %small
