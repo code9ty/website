@@ -3,10 +3,14 @@
   .page_centered
     %h1
       \ code9ty
-    %a{data: { open:'video_reveal' }}
-      = image_tag('play.png')
     %h2
       Coding Bootcamp
+    %p
+      supported by:
+    = image_tag('ca_logo.png', class: 'logo')
+    %p
+      Teaching everybody how to code
+    %br
     %button.button.success.shadowed{'data-open' => 'instructions'}
       - if @open
         Apply Now!
